@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d2mjy2lf0mo6f"]
+
+[ext_resource type="PackedScene" uid="uid://mblekvuhtx8j" path="res://player/player.tscn" id="1_6xmxd"]
+[ext_resource type="Texture2D" uid="uid://i6i6um7oppva" path="res://assets/floor-2.png" id="1_tcf2h"]
+
+[node name="Node2D" type="Node2D" unique_id=408905311]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=886117801]
+offset_right = 1134.0
+offset_bottom = 648.0
+texture = ExtResource("1_tcf2h")
+
+[node name="Player" parent="." unique_id=1372084186 instance=ExtResource("1_6xmxd")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=347723142]
+color = Color(0, 0, 0, 1)
