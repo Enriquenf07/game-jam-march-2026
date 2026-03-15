@@ -5,7 +5,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqu6x"]
 
-[node name="Player" type="CharacterBody2D" unique_id=1372084186]
+[node name="Player" type="CharacterBody2D" unique_id=1372084186 groups=["player"]]
 script = ExtResource("1_oul6g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=494601615]
@@ -20,3 +20,5 @@ texture = ExtResource("2_rkbax")
 
 [node name="RayCast2D" type="RayCast2D" parent="body" unique_id=1722548293]
 unique_name_in_owner = true
+collision_mask = 2
+collide_with_areas = true

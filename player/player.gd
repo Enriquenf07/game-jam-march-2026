@@ -15,3 +15,22 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	move_and_slide()
+	
+func _unhandled_input(event: InputEvent) -> void:
+	if(event.is_action_pressed('interact') and ray_cast.is_colliding()):
+		var collider := ray_cast.get_collider()
+		if(collider is InteractableObject):
+			collider.on_interaction()
+
+func handle_trap_activation(trap: TrapBase.TrapType) -> void:
+	match trap:
+		TrapBase.TrapType.FLOORBOARD:
+			print("squeak")
+		TrapBase.TrapType.BANANA:
+			print("slipped on banana")
+		TrapBase.TrapType.MARBLES:
+			print("slipped on marbles")
+		TrapBase.TrapType.MOUSE_TRAP:
+			print("yeowch!!!")
+		TrapBase.TrapType.PUDDLE:
+			print("slipped on puddle")
