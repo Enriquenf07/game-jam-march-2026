@@ -15,7 +15,7 @@ fill = 1
 fill_from = Vector2(0.5, 0.50869566)
 fill_to = Vector2(0.047826085, 1)
 
-[node name="Player" type="CharacterBody2D" unique_id=1372084186]
+[node name="Player" type="CharacterBody2D" unique_id=1372084186 groups=["player"]]
 script = ExtResource("1_oul6g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=494601615]

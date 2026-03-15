@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://mblekvuhtx8j" path="res://player/player.tscn" id="1_6xmxd"]
 [ext_resource type="Texture2D" uid="uid://i6i6um7oppva" path="res://assets/floor-2.png" id="1_tcf2h"]
+[ext_resource type="PackedScene" uid="uid://gvbi2d7td26c" path="res://traps/floorboard.tscn" id="3_4717r"]
 
 [node name="Node2D" type="Node2D" unique_id=408905311]
 
@@ -14,3 +15,6 @@ texture = ExtResource("1_tcf2h")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=347723142]
 color = Color(0, 0, 0, 1)
+
+[node name="Floorboard" parent="." unique_id=1354571515 instance=ExtResource("3_4717r")]
+position = Vector2(439, 259)

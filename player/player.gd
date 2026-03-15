@@ -13,3 +13,16 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	move_and_slide()
+
+func handle_trap_activation(trap: TrapBase.TrapType) -> void:
+	match trap:
+		TrapBase.TrapType.FLOORBOARD:
+			print("squeak")
+		TrapBase.TrapType.BANANA:
+			print("slipped on banana")
+		TrapBase.TrapType.MARBLES:
+			print("slipped on marbles")
+		TrapBase.TrapType.MOUSE_TRAP:
+			print("yeowch!!!")
+		TrapBase.TrapType.PUDDLE:
+			print("slipped on puddle")
