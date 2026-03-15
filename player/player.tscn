@@ -5,16 +5,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqu6x"]
 
-[sub_resource type="Gradient" id="Gradient_rkbax"]
-offsets = PackedFloat32Array(0, 0.3253012, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0.22891569, 0.22891569, 0.22891569, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_g1dw6"]
-gradient = SubResource("Gradient_rkbax")
-fill = 1
-fill_from = Vector2(0.5, 0.50869566)
-fill_to = Vector2(0.047826085, 1)
-
 [node name="Player" type="CharacterBody2D" unique_id=1372084186]
 script = ExtResource("1_oul6g")
 
@@ -26,6 +16,7 @@ position = Vector2(-1.0000038, -1.0000038)
 scale = Vector2(0.203125, 0.203125)
 texture = ExtResource("2_rkbax")
 
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1667318142]
-texture = SubResource("GradientTexture2D_g1dw6")
-texture_scale = 3.8
+[node name="body" type="Node2D" parent="." unique_id=482923969]
+
+[node name="RayCast2D" type="RayCast2D" parent="body" unique_id=1722548293]
+unique_name_in_owner = true
