@@ -6,8 +6,10 @@ const JUMP_VELOCITY = -400.0
 const FRICTION = 2000.0
 @export var ray_length: float = 50.0
 @onready var ray_cast: RayCast2D = %RayCast2D
+var is_still = false
 
 func _physics_process(delta: float) -> void:
+	if(is_still): return
 	var direction := Input.get_vector('left', 'right', 'up', 'down').normalized()
 	if direction != Vector2.ZERO:
 		ray_cast.target_position = direction * ray_length
@@ -20,7 +22,10 @@ func _unhandled_input(event: InputEvent) -> void:
 	if(event.is_action_pressed('interact') and ray_cast.is_colliding()):
 		var collider := ray_cast.get_collider()
 		if(collider is InteractableObject):
-			collider.on_interaction()
+			collider.on_interaction(self)
+			
+func set_is_still(flag: bool):
+	is_still = flag
 
 func handle_trap_activation(trap: TrapBase.TrapType) -> void:
 	match trap:

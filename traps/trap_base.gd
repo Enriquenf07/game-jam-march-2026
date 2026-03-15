@@ -21,7 +21,10 @@ func _on_body_entered(body: Node2D) -> void:
 func _disarm_decorator():
 	pass
 
-func _disarm() -> void:
+func _disarm(player: Player) -> void:
+	player.set_is_still(true)
+	await get_tree().create_timer(time_to_disable).timeout
+	player.set_is_still(false)
 	_trap_trigger_collision.set_deferred("disabled", true)
 	_disarm_sound.play()
 	_disarm_decorator()

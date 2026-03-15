@@ -3,8 +3,7 @@ class_name InteractableObject
 
 signal interacted
 
-
-func on_interaction():
-	interacted.emit()
+func on_interaction(player: Player):
+	interacted.emit(player)
 
 	
