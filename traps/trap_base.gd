@@ -1,5 +1,5 @@
 class_name TrapBase
-extends Node
+extends Area2D
 
 enum TrapType {FLOORBOARD, BANANA, MARBLES, MOUSE_TRAP, PUDDLE}
 
@@ -18,6 +18,13 @@ func _on_body_entered(body: Node2D) -> void:
 	# Call a function in the player script to handle what happens
 	body.handle_trap_activation(_type_of_trap)
 
-func _disarm() -> void:
+func _disarm_decorator():
+	pass
+
+func _disarm(player: Player) -> void:
+	player.set_is_still(true)
+	await get_tree().create_timer(time_to_disable).timeout
+	player.set_is_still(false)
 	_trap_trigger_collision.set_deferred("disabled", true)
 	_disarm_sound.play()
+	_disarm_decorator()

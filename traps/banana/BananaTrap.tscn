@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://de3paqyhcj6p2"]
+
+[ext_resource type="Script" uid="uid://dsfjjhg0upe7p" path="res://traps/banana/banana_trap.gd" id="1_71s8c"]
+[ext_resource type="Script" uid="uid://fpin7rm4san6" path="res://object/interactable_object.gd" id="2_6vc60"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lgx3o"]
+radius = 18.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6vc60"]
+radius = 30.149628
+
+[node name="BananaTrap" type="Area2D" unique_id=1649020604 node_paths=PackedStringArray("_trap_trigger_collision", "_disarm_sound")]
+script = ExtResource("1_71s8c")
+_type_of_trap = 1
+_trap_trigger_collision = NodePath("TrapCollision")
+_disarm_sound = NodePath("DisarmSoundPlayer")
+metadata/_custom_type_script = "uid://dsfjjhg0upe7p"
+
+[node name="TrapCollision" type="CollisionShape2D" parent="." unique_id=1159727633]
+shape = SubResource("CircleShape2D_lgx3o")
+
+[node name="DisarmSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=1243193047]
+
+[node name="InteractableArea" type="Area2D" parent="." unique_id=1445917597]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_6vc60")
+metadata/_custom_type_script = "uid://fpin7rm4san6"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea" unique_id=1007693512]
+shape = SubResource("CircleShape2D_6vc60")
+debug_color = Color(0.9593858, 6.738305e-07, 0.5245954, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
