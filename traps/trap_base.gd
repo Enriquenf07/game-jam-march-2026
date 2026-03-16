@@ -19,7 +19,7 @@ func _ready() -> void:
 	interactableArea.connect("interacted", _disarm)
 
 func _on_body_entered(body: Node2D) -> void:
-	if (!body.is_in_group("player") || !body.has_method("handle_trap_activation")):
+	if (not body.is_in_group("player") or not body.has_method("handle_trap_activation")):
 		return
 	# Call a function in the player script to handle what happens
 	_trap_trigger_sound.play()
@@ -34,6 +34,7 @@ func _disarm(player: Player) -> void:
 	player.set_is_still(false)
 	_trap_trigger_collision.set_deferred("disabled", true)
 	_trap_interaction_collision.set_deferred("disabled", true)
-	_disarm_sound.play()
+	if (_type_of_trap != TrapType.MOUSE_TRAP):
+		_disarm_sound.play()
 	trap_disarmed.emit()
 	_disarm_decorator()

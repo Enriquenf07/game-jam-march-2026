@@ -57,3 +57,4 @@ debug_color = Color(0.9607843, 0, 0.5254902, 0.41960785)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="trap_disarmed" from="." to="." method="_on_trap_disarmed"]
+[connection signal="finished" from="TrapActivationSoundPlayer" to="." method="_on_trap_activation_sound_finished"]

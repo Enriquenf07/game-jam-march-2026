@@ -20,7 +20,7 @@ _trap_audio_collision = NodePath("SoundArea/SoundAreaCollision")
 _trap_visual = NodePath("TrapVisual")
 _trap_trigger_collision = NodePath("TrapCollision")
 _disarm_sound = NodePath("DisarmSoundPlayer")
-_trap_trigger_sound = NodePath("TrapActivationSound")
+_trap_trigger_sound = NodePath("TrapActivationSoundPlayer")
 
 [node name="TrapVisual" type="Sprite2D" parent="." unique_id=206416029]
 texture = ExtResource("1_x4wjo")
@@ -30,7 +30,7 @@ shape = SubResource("RectangleShape2D_imx1i")
 
 [node name="DisarmSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=2147132096]
 
-[node name="TrapActivationSound" type="AudioStreamPlayer2D" parent="." unique_id=564354438]
+[node name="TrapActivationSoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=564354438]
 stream = ExtResource("3_4ib02")
 max_distance = 320.0
 
@@ -51,4 +51,4 @@ shape = SubResource("RectangleShape2D_d61ba")
 debug_color = Color(0.9607843, 0, 0.5254902, 0.41960785)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="finished" from="TrapActivationSound" to="." method="_on_trap_activation_sound_finished"]
+[connection signal="finished" from="TrapActivationSoundPlayer" to="." method="_on_trap_activation_sound_finished"]

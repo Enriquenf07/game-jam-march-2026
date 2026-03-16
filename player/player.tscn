@@ -22,6 +22,14 @@ animations = [{
 "loop": false,
 "name": &"marble_trip",
 "speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rkbax")
+}],
+"loop": false,
+"name": &"mouse_trap_hurt",
+"speed": 1.0
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=1372084186 node_paths=PackedStringArray("_debug_direction_label", "_player_visual") groups=["player"]]
@@ -36,7 +44,6 @@ shape = SubResource("RectangleShape2D_kqu6x")
 position = Vector2(-1.0000038, -1.0000038)
 scale = Vector2(0.203125, 0.203125)
 sprite_frames = SubResource("SpriteFrames_rkbax")
-animation = &"marble_trip"
 autoplay = "default"
 
 [node name="body" type="Node2D" parent="." unique_id=482923969]
