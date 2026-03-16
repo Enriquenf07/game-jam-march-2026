@@ -36,5 +36,5 @@ func _disarm(player: Player) -> void:
 	_trap_interaction_collision.set_deferred("disabled", true)
 	if (_type_of_trap != TrapType.MOUSE_TRAP):
 		_disarm_sound.play()
-	trap_disarmed.emit()
 	_disarm_decorator()
+	trap_disarmed.emit()

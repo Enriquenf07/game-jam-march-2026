@@ -100,7 +100,16 @@ func handle_trap_activation(trap: TrapBase.TrapType) -> void:
 		TrapBase.TrapType.PUDDLE:
 			print("slipped on puddle")
 
+func _slip_on_puddle():
+	_is_stunned = true
+	_is_slipping = false
+	_player_visual.play("puddle_slip")
+	velocity = Vector2.ZERO
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-	if (_player_visual.animation == "marble_trip" or _player_visual.animation == "mouse_trap_hurt"):
-		_is_stunned = false
+	if (not _is_in_stunned_animation(_player_visual.animation)):
+		return
+	_is_stunned = false
+
+func _is_in_stunned_animation(player_animation: StringName) -> bool:
+	return (player_animation == "marble_trip" or player_animation == "mouse_trap_hurt" or player_animation == "puddle_slip")

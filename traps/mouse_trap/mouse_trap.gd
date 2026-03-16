@@ -14,6 +14,7 @@ func _on_body_entered(body: Node2D) -> void:
 		return
 	_player_hurt_sound.play()
 	_player_hurt_collision.set_deferred("disabled", false)
+	_trap_interaction_collision.set_deferred("disabled", true)
 	_trap_visual.texture = _disarmed_texture
 
 func _on_trap_disarmed():

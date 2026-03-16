@@ -30,6 +30,14 @@ animations = [{
 "loop": false,
 "name": &"mouse_trap_hurt",
 "speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rkbax")
+}],
+"loop": false,
+"name": &"puddle_slip",
+"speed": 1.0
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=1372084186 node_paths=PackedStringArray("_debug_direction_label", "_player_visual") groups=["player"]]
@@ -54,6 +62,7 @@ collision_mask = 2
 collide_with_areas = true
 
 [node name="PlayerDebugLayer" type="CanvasLayer" parent="." unique_id=1349709305]
+visible = false
 
 [node name="DebugContainer" type="VBoxContainer" parent="PlayerDebugLayer" unique_id=203990197]
 anchors_preset = 2

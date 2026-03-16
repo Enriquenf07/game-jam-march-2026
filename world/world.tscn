@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://de3paqyhcj6p2" path="res://traps/banana/BananaTrap.tscn" id="3_h5o24"]
 [ext_resource type="PackedScene" uid="uid://cbhd62ic6mqpb" path="res://traps/marbles/marbles.tscn" id="4_h5o24"]
 [ext_resource type="PackedScene" uid="uid://602avg8qg6xb" path="res://traps/mouse_trap/mouse_trap.tscn" id="5_mmdvd"]
+[ext_resource type="PackedScene" uid="uid://hjrqcu6wi22w" path="res://traps/puddle/puddle.tscn" id="6_fn3g3"]
 
 [node name="Node2D" type="Node2D" unique_id=408905311]
 script = ExtResource("1_4717r")
@@ -23,3 +24,6 @@ position = Vector2(155, 130)
 
 [node name="MouseTrap" parent="." unique_id=877290527 instance=ExtResource("5_mmdvd")]
 position = Vector2(-174, 290)
+
+[node name="Puddle" parent="." unique_id=1615284829 instance=ExtResource("6_fn3g3")]
+position = Vector2(342, 39)
