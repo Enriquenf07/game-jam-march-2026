@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bbcrcehk7g6b" path="res://traps/noisy_trap.gd" id="1_imx1i"]
 [ext_resource type="Texture2D" uid="uid://wqr3uvl4rk0x" path="res://assets/TEMP_floorboard.png" id="1_x4wjo"]
 [ext_resource type="AudioStream" uid="uid://wsh4r45a1o2l" path="res://traps/TEMP_squeak.wav" id="3_4ib02"]
+[ext_resource type="Script" uid="uid://fpin7rm4san6" path="res://object/interactable_object.gd" id="4_d61ba"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imx1i"]
 size = Vector2(192, 64)
@@ -10,15 +11,16 @@ size = Vector2(192, 64)
 [sub_resource type="CircleShape2D" id="CircleShape2D_x4wjo"]
 radius = 320.0
 
-[node name="Floorboard" type="Area2D" unique_id=1354571515 node_paths=PackedStringArray("_trap_audio_collision", "_trap_trigger_sound", "_trap_visual", "_trap_trigger_collision", "_disarm_sound")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d61ba"]
+size = Vector2(216, 88)
+
+[node name="Floorboard" type="Area2D" unique_id=1354571515 node_paths=PackedStringArray("_trap_audio_collision", "_trap_visual", "_trap_trigger_collision", "_disarm_sound", "_trap_trigger_sound")]
 script = ExtResource("1_imx1i")
-_trap_audio_collision = NodePath("SoundArea/SoundArea")
-_trap_trigger_sound = NodePath("TrapActivationSound")
-_type_of_trap = null
+_trap_audio_collision = NodePath("SoundArea/SoundAreaCollision")
 _trap_visual = NodePath("TrapVisual")
 _trap_trigger_collision = NodePath("TrapCollision")
 _disarm_sound = NodePath("DisarmSoundPlayer")
-time_to_disable = null
+_trap_trigger_sound = NodePath("TrapActivationSound")
 
 [node name="TrapVisual" type="Sprite2D" parent="." unique_id=206416029]
 texture = ExtResource("1_x4wjo")
@@ -34,10 +36,19 @@ max_distance = 320.0
 
 [node name="SoundArea" type="Area2D" parent="." unique_id=2062724446]
 
-[node name="SoundArea" type="CollisionShape2D" parent="SoundArea" unique_id=312554078]
+[node name="SoundAreaCollision" type="CollisionShape2D" parent="SoundArea" unique_id=312554078]
 shape = SubResource("CircleShape2D_x4wjo")
 disabled = true
 debug_color = Color(0.97718555, 0.100052394, 0.2949113, 0.41960785)
+
+[node name="InteractableArea" type="Area2D" parent="." unique_id=1000115045]
+unique_name_in_owner = true
+script = ExtResource("4_d61ba")
+metadata/_custom_type_script = "uid://fpin7rm4san6"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea" unique_id=1831331750]
+shape = SubResource("RectangleShape2D_d61ba")
+debug_color = Color(0.9607843, 0, 0.5254902, 0.41960785)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="finished" from="TrapActivationSound" to="." method="_on_trap_activation_sound_finished"]

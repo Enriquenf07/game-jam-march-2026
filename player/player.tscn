@@ -5,17 +5,39 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqu6x"]
 
-[node name="Player" type="CharacterBody2D" unique_id=1372084186 node_paths=PackedStringArray("_debug_direction_label") groups=["player"]]
+[sub_resource type="SpriteFrames" id="SpriteFrames_rkbax"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rkbax")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rkbax")
+}],
+"loop": false,
+"name": &"marble_trip",
+"speed": 1.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=1372084186 node_paths=PackedStringArray("_debug_direction_label", "_player_visual") groups=["player"]]
 script = ExtResource("1_oul6g")
 _debug_direction_label = NodePath("PlayerDebugLayer/DebugContainer/DirectionLabel")
+_player_visual = NodePath("AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=494601615]
 shape = SubResource("RectangleShape2D_kqu6x")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=558505092]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1604162737]
 position = Vector2(-1.0000038, -1.0000038)
 scale = Vector2(0.203125, 0.203125)
-texture = ExtResource("2_rkbax")
+sprite_frames = SubResource("SpriteFrames_rkbax")
+animation = &"marble_trip"
+autoplay = "default"
 
 [node name="body" type="Node2D" parent="." unique_id=482923969]
 
@@ -38,3 +60,5 @@ grow_vertical = 0
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Movement Direction: NONE"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

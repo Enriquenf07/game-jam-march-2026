@@ -11,9 +11,12 @@ enum TrapType {FLOORBOARD, BANANA, MARBLES, MOUSE_TRAP, PUDDLE}
 @export var _disarm_sound: AudioStreamPlayer
 @export var _trap_trigger_sound: AudioStreamPlayer2D
 @export var time_to_disable: float = 1.0
+@export var _trap_interaction_collision: CollisionShape2D
+@onready var interactableArea := %InteractableArea
 
 func _ready() -> void:
 	assert((time_to_disable > 0.0), name + " has a disable time of 0 or less!")
+	interactableArea.connect("interacted", _disarm)
 
 func _on_body_entered(body: Node2D) -> void:
 	if (!body.is_in_group("player") || !body.has_method("handle_trap_activation")):
@@ -30,6 +33,7 @@ func _disarm(player: Player) -> void:
 	await get_tree().create_timer(time_to_disable).timeout
 	player.set_is_still(false)
 	_trap_trigger_collision.set_deferred("disabled", true)
+	_trap_interaction_collision.set_deferred("disabled", true)
 	_disarm_sound.play()
 	trap_disarmed.emit()
 	_disarm_decorator()
