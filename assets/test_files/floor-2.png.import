@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5mpeo6kw1ivs"
-path="res://.godot/imported/trap_example.png-5fd3eccca16391f351414b212193a109.ctex"
+uid="uid://i6i6um7oppva"
+path="res://.godot/imported/floor-2.png-83fb2141451e1d7f5946033eaba4ac8b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/trap_example.png"
-dest_files=["res://.godot/imported/trap_example.png-5fd3eccca16391f351414b212193a109.ctex"]
+source_file="res://assets/test_files/floor-2.png"
+dest_files=["res://.godot/imported/floor-2.png-83fb2141451e1d7f5946033eaba4ac8b.ctex"]
 
 [params]
 

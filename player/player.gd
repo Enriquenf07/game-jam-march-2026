@@ -8,6 +8,7 @@ const FRICTION = 2000.0
 @onready var ray_cast: RayCast2D = %RayCast2D
 var is_still = false
 var is_running = false
+var inventory: Inventory
 
 func get_speed():
 	return SPEED if !is_running else SPEED * 1.5

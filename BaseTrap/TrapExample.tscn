@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://b3coitwxqhccl"]
-
-[ext_resource type="Texture2D" uid="uid://5mpeo6kw1ivs" path="res://assets/trap_example.png" id="1_xiteg"]
-
-[node name="TrapExample" type="Node2D" unique_id=320373287]
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1680492020]
-texture = ExtResource("1_xiteg")
