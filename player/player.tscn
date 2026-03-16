@@ -5,8 +5,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqu6x"]
 
-[node name="Player" type="CharacterBody2D" unique_id=1372084186 groups=["player"]]
+[node name="Player" type="CharacterBody2D" unique_id=1372084186 node_paths=PackedStringArray("_debug_direction_label") groups=["player"]]
 script = ExtResource("1_oul6g")
+_debug_direction_label = NodePath("PlayerDebugLayer/DebugContainer/DirectionLabel")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=494601615]
 shape = SubResource("RectangleShape2D_kqu6x")
@@ -22,3 +23,18 @@ texture = ExtResource("2_rkbax")
 unique_name_in_owner = true
 collision_mask = 2
 collide_with_areas = true
+
+[node name="PlayerDebugLayer" type="CanvasLayer" parent="." unique_id=1349709305]
+
+[node name="DebugContainer" type="VBoxContainer" parent="PlayerDebugLayer" unique_id=203990197]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -45.0
+offset_right = 427.0
+grow_vertical = 0
+
+[node name="DirectionLabel" type="Label" parent="PlayerDebugLayer/DebugContainer" unique_id=1506442594]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Movement Direction: NONE"

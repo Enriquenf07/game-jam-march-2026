@@ -12,6 +12,3 @@ func _physics_process(delta: float) -> void:
 	if(player != null):
 		var target_pos = player.global_position
 		camera.global_position = camera.global_position.lerp(target_pos, lerp_speed * delta)
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
