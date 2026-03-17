@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dsfjjhg0upe7p" path="res://traps/banana/banana_trap.gd" id="1_71s8c"]
 [ext_resource type="Script" uid="uid://fpin7rm4san6" path="res://object/interactable_object.gd" id="2_6vc60"]
-[ext_resource type="Texture2D" uid="uid://cs6qfufs118gu" path="res://traps/banana/assets/banana_peel_-_64x64.png" id="2_u5qeu"]
+[ext_resource type="Texture2D" uid="uid://cbxcxbi3xdux7" path="res://traps/banana/assets/banana_peel_-_64x64.png" id="2_u5qeu"]
 [ext_resource type="AudioStream" uid="uid://q4jgkx2ybo0p" path="res://traps/banana/assets/TEMP_banana_disarm.wav" id="3_u5qeu"]
 [ext_resource type="AudioStream" uid="uid://dkwtaifihobq7" path="res://traps/banana/assets/TEMP_banana_slip.wav" id="3_xfo5d"]
 

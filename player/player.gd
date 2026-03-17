@@ -4,6 +4,7 @@ class_name Player
 enum MovingDirection {UP, DOWN, LEFT, RIGHT, NONE}
 
 const SPEED = 300.0
+const SLIPPING_SPEED: float = 375.0
 const JUMP_VELOCITY = -400.0
 const FRICTION = 2000.0
 const DOWN_RAY_LENGTH_EXTENSION: float = 46.0
@@ -71,13 +72,13 @@ func determine_moving_direction(input_direction: Vector2) -> MovingDirection:
 func set_sliding_direction(movingDirection: MovingDirection) -> Vector2:
 	match  movingDirection:
 		MovingDirection.UP:
-			return Vector2.UP * SPEED
+			return Vector2.UP * SLIPPING_SPEED
 		MovingDirection.DOWN:
-			return Vector2.DOWN * SPEED
+			return Vector2.DOWN * SLIPPING_SPEED
 		MovingDirection.LEFT:
-			return Vector2.LEFT * SPEED
+			return Vector2.LEFT * SLIPPING_SPEED
 		MovingDirection.RIGHT:
-			return Vector2.RIGHT * SPEED
+			return Vector2.RIGHT * SLIPPING_SPEED
 	return Vector2.ZERO
 	
 func _unhandled_input(event: InputEvent) -> void:
@@ -127,6 +128,8 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	if (not _is_in_stunned_animation(_player_visual.animation)):
 		return
 	_is_stunned = false
+	if (Input.is_action_pressed("run")):
+		is_running = true
 
 func _is_in_stunned_animation(player_animation: StringName) -> bool:
 	return (player_animation == "marble_trip" or player_animation == "mouse_trap_hurt" or player_animation == "puddle_slip")
