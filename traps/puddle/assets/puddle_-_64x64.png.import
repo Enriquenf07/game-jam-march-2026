@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqcfuygdhdiws"
-path="res://.godot/imported/TEMP_puddle.png-dbf755a40188be23cbfbc9e167bbd812.ctex"
+uid="uid://27ysarj3mmf1"
+path="res://.godot/imported/puddle_-_64x64.png-e4638301e4adfadb2dac6f2aa1fadc00.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://traps/puddle/assets/TEMP_puddle.png"
-dest_files=["res://.godot/imported/TEMP_puddle.png-dbf755a40188be23cbfbc9e167bbd812.ctex"]
+source_file="res://traps/puddle/assets/puddle_-_64x64.png"
+dest_files=["res://.godot/imported/puddle_-_64x64.png-e4638301e4adfadb2dac6f2aa1fadc00.ctex"]
 
 [params]
 
