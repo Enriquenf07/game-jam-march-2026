@@ -14,16 +14,54 @@ fill = 1
 fill_from = Vector2(0.49565217, 0.4869565)
 fill_to = Vector2(0.8130435, 0.16521738)
 
-[node name="Player" type="CharacterBody2D" unique_id=1372084186 groups=["player"]]
+[sub_resource type="SpriteFrames" id="SpriteFrames_rkbax"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rkbax")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rkbax")
+}],
+"loop": false,
+"name": &"marble_trip",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rkbax")
+}],
+"loop": false,
+"name": &"mouse_trap_hurt",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rkbax")
+}],
+"loop": false,
+"name": &"puddle_slip",
+"speed": 1.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=1372084186 node_paths=PackedStringArray("_debug_direction_label", "_player_visual") groups=["player"]]
 script = ExtResource("1_oul6g")
+_debug_direction_label = NodePath("PlayerDebugLayer/DebugContainer/DirectionLabel")
+_player_visual = NodePath("AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=494601615]
 shape = SubResource("RectangleShape2D_kqu6x")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=558505092]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1604162737]
 position = Vector2(-1.0000038, -1.0000038)
 scale = Vector2(0.203125, 0.203125)
-texture = ExtResource("2_rkbax")
+sprite_frames = SubResource("SpriteFrames_rkbax")
+autoplay = "default"
 
 [node name="body" type="Node2D" parent="." unique_id=482923969]
 
@@ -35,3 +73,21 @@ collide_with_areas = true
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1367866925]
 texture = SubResource("GradientTexture2D_g1dw6")
 texture_scale = 8.0
+
+[node name="PlayerDebugLayer" type="CanvasLayer" parent="." unique_id=1349709305]
+visible = false
+
+[node name="DebugContainer" type="VBoxContainer" parent="PlayerDebugLayer" unique_id=203990197]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -45.0
+offset_right = 427.0
+grow_vertical = 0
+
+[node name="DirectionLabel" type="Label" parent="PlayerDebugLayer/DebugContainer" unique_id=1506442594]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Movement Direction: NONE"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

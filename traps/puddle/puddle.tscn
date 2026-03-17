@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://hjrqcu6wi22w"]
+
+[ext_resource type="Script" uid="uid://d2dyfh18ssu08" path="res://traps/puddle/puddle.gd" id="1_gv67p"]
+[ext_resource type="Texture2D" uid="uid://cqcfuygdhdiws" path="res://assets/TEMP_puddle.png" id="2_x5rcb"]
+[ext_resource type="AudioStream" uid="uid://bxgiedomh7gcb" path="res://assets/TEMP_puddle_disarm.wav" id="3_x4rcs"]
+[ext_resource type="AudioStream" uid="uid://cew7krf8jy5ix" path="res://assets/TEMP_puddle_splash.wav" id="4_4lmy7"]
+[ext_resource type="Script" uid="uid://fpin7rm4san6" path="res://object/interactable_object.gd" id="4_s52k6"]
+[ext_resource type="AudioStream" uid="uid://0eu4afeebqr0" path="res://assets/TEMP_puddle_slip.wav" id="5_rdwt2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x5rcb"]
+radius = 28.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x4rcs"]
+radius = 160.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s52k6"]
+radius = 320.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a56ey"]
+radius = 40.0
+
+[node name="Puddle" type="Area2D" unique_id=1615284829 node_paths=PackedStringArray("_slipping_sound_player", "_slipping_sound_collision", "_trap_audio_collision", "_trap_visual", "_trap_trigger_collision", "_disarm_sound", "_trap_trigger_sound", "_trap_interaction_collision")]
+script = ExtResource("1_gv67p")
+_slipping_sound_player = NodePath("SoundArea/SlippingSoundPlayer")
+_slipping_sound_collision = NodePath("SoundArea/SlippingSoundAreaCollision")
+_trap_audio_collision = NodePath("SoundArea/WalkingSoundAreaCollision")
+_type_of_trap = 4
+_trap_visual = NodePath("TrapVisual")
+_trap_trigger_collision = NodePath("TrapCollision")
+_disarm_sound = NodePath("DisarmSoundPlayer")
+_trap_trigger_sound = NodePath("TrapActivationSoundPlayer")
+_trap_interaction_collision = NodePath("InteractableArea/InteractionCollision")
+
+[node name="TrapVisual" type="Sprite2D" parent="." unique_id=106391399]
+texture = ExtResource("2_x5rcb")
+
+[node name="TrapCollision" type="CollisionShape2D" parent="." unique_id=1200067528]
+shape = SubResource("CircleShape2D_x5rcb")
+
+[node name="DisarmSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=1089889721]
+stream = ExtResource("3_x4rcs")
+
+[node name="TrapActivationSoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1216367516]
+stream = ExtResource("4_4lmy7")
+
+[node name="SoundArea" type="Area2D" parent="." unique_id=1540488914]
+
+[node name="WalkingSoundAreaCollision" type="CollisionShape2D" parent="SoundArea" unique_id=1368089361]
+shape = SubResource("CircleShape2D_x4rcs")
+disabled = true
+debug_color = Color(0.9764706, 0.101960786, 0.29411766, 0.41960785)
+
+[node name="SlippingSoundAreaCollision" type="CollisionShape2D" parent="SoundArea" unique_id=43645328]
+shape = SubResource("CircleShape2D_s52k6")
+disabled = true
+debug_color = Color(0.9764706, 0.101960786, 0.29411766, 0.41960785)
+
+[node name="SlippingSoundPlayer" type="AudioStreamPlayer2D" parent="SoundArea" unique_id=24640079]
+stream = ExtResource("5_rdwt2")
+
+[node name="InteractableArea" type="Area2D" parent="." unique_id=1739025049]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_s52k6")
+metadata/_custom_type_script = "uid://fpin7rm4san6"
+
+[node name="InteractionCollision" type="CollisionShape2D" parent="InteractableArea" unique_id=988013123]
+shape = SubResource("CircleShape2D_a56ey")
+debug_color = Color(0.9607843, 0, 0.5254902, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="trap_disarmed" from="." to="." method="_on_trap_disarmed"]
+[connection signal="finished" from="DisarmSoundPlayer" to="." method="_on_disarm_sound_player_finished"]
+[connection signal="finished" from="TrapActivationSoundPlayer" to="." method="_on_trap_activation_sound_finished"]
+[connection signal="finished" from="SoundArea/SlippingSoundPlayer" to="." method="_on_slipping_sound_player_finished"]
