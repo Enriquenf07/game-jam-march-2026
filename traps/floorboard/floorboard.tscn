@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://gvbi2d7td26c"]
 
-[ext_resource type="Script" uid="uid://bbcrcehk7g6b" path="res://traps/noisy_trap.gd" id="1_imx1i"]
+[ext_resource type="Script" uid="uid://gkexexnul427" path="res://traps/floorboard/floorboard.gd" id="1_ch6ii"]
 [ext_resource type="Texture2D" uid="uid://wqr3uvl4rk0x" path="res://assets/TEMP_floorboard.png" id="1_x4wjo"]
 [ext_resource type="AudioStream" uid="uid://wsh4r45a1o2l" path="res://assets/TEMP_squeak.wav" id="3_4ib02"]
+[ext_resource type="AudioStream" uid="uid://df46rpiwwqdxr" path="res://assets/TEMP_floorboard_disarm.wav" id="3_eglyy"]
 [ext_resource type="Script" uid="uid://fpin7rm4san6" path="res://object/interactable_object.gd" id="4_d61ba"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imx1i"]
@@ -14,13 +15,14 @@ radius = 320.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d61ba"]
 size = Vector2(216, 88)
 
-[node name="Floorboard" type="Area2D" unique_id=1354571515 node_paths=PackedStringArray("_trap_audio_collision", "_trap_visual", "_trap_trigger_collision", "_disarm_sound", "_trap_trigger_sound")]
-script = ExtResource("1_imx1i")
+[node name="Floorboard" type="Area2D" unique_id=1354571515 node_paths=PackedStringArray("_trap_audio_collision", "_trap_visual", "_trap_trigger_collision", "_disarm_sound", "_trap_trigger_sound", "_trap_interaction_collision")]
+script = ExtResource("1_ch6ii")
 _trap_audio_collision = NodePath("SoundArea/SoundAreaCollision")
 _trap_visual = NodePath("TrapVisual")
 _trap_trigger_collision = NodePath("TrapCollision")
 _disarm_sound = NodePath("DisarmSoundPlayer")
 _trap_trigger_sound = NodePath("TrapActivationSoundPlayer")
+_trap_interaction_collision = NodePath("InteractableArea/InteractionCollision")
 
 [node name="TrapVisual" type="Sprite2D" parent="." unique_id=206416029]
 texture = ExtResource("1_x4wjo")
@@ -29,6 +31,7 @@ texture = ExtResource("1_x4wjo")
 shape = SubResource("RectangleShape2D_imx1i")
 
 [node name="DisarmSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=2147132096]
+stream = ExtResource("3_eglyy")
 
 [node name="TrapActivationSoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=564354438]
 stream = ExtResource("3_4ib02")
@@ -43,6 +46,8 @@ debug_color = Color(0.97718555, 0.100052394, 0.2949113, 0.41960785)
 
 [node name="InteractableArea" type="Area2D" parent="." unique_id=1000115045]
 unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("4_d61ba")
 metadata/_custom_type_script = "uid://fpin7rm4san6"
 
@@ -51,4 +56,6 @@ shape = SubResource("RectangleShape2D_d61ba")
 debug_color = Color(0.9607843, 0, 0.5254902, 0.41960785)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="trap_disarmed" from="." to="." method="_on_trap_disarmed"]
 [connection signal="finished" from="TrapActivationSoundPlayer" to="." method="_on_trap_activation_sound_finished"]
