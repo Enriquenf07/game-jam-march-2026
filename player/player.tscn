@@ -5,6 +5,15 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqu6x"]
 
+[sub_resource type="Gradient" id="Gradient_rkbax"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g1dw6"]
+gradient = SubResource("Gradient_rkbax")
+fill = 1
+fill_from = Vector2(0.49565217, 0.4869565)
+fill_to = Vector2(0.8130435, 0.16521738)
+
 [node name="Player" type="CharacterBody2D" unique_id=1372084186 groups=["player"]]
 script = ExtResource("1_oul6g")
 
@@ -22,3 +31,7 @@ texture = ExtResource("2_rkbax")
 unique_name_in_owner = true
 collision_mask = 2
 collide_with_areas = true
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1367866925]
+texture = SubResource("GradientTexture2D_g1dw6")
+texture_scale = 8.0

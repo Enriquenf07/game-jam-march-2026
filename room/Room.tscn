@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bfeqvwpqr1iw3"]
+
+[ext_resource type="Script" uid="uid://d0lmdjblolaod" path="res://room/room.gd" id="1_ppkfq"]
+
+[node name="Room" type="TileMapLayer" unique_id=1779495073 node_paths=PackedStringArray("room_area")]
+visible = false
+script = ExtResource("1_ppkfq")
+room_area = NodePath("")
+metadata/_custom_type_script = "uid://d0lmdjblolaod"
