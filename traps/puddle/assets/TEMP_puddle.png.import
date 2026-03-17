@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b54tg1pvaawui"
-path="res://.godot/imported/TEMP_marbles.png-6adc521280a115e863a672533f10abfb.ctex"
+uid="uid://cqcfuygdhdiws"
+path="res://.godot/imported/TEMP_puddle.png-dbf755a40188be23cbfbc9e167bbd812.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TEMP_marbles.png"
-dest_files=["res://.godot/imported/TEMP_marbles.png-6adc521280a115e863a672533f10abfb.ctex"]
+source_file="res://traps/puddle/assets/TEMP_puddle.png"
+dest_files=["res://.godot/imported/TEMP_puddle.png-dbf755a40188be23cbfbc9e167bbd812.ctex"]
 
 [params]
 

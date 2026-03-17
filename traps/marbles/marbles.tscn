@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://cbhd62ic6mqpb"]
 
 [ext_resource type="Script" uid="uid://cfjcpixclopun" path="res://traps/marbles/marbles.gd" id="1_cfp6s"]
-[ext_resource type="Texture2D" uid="uid://b54tg1pvaawui" path="res://assets/TEMP_marbles.png" id="2_djhvq"]
+[ext_resource type="Texture2D" uid="uid://b54tg1pvaawui" path="res://traps/marbles/assets/TEMP_marbles.png" id="2_djhvq"]
 [ext_resource type="Script" uid="uid://fpin7rm4san6" path="res://object/interactable_object.gd" id="3_6uuub"]
-[ext_resource type="AudioStream" uid="uid://coom6nro1awpp" path="res://assets/TEMP_marbles_disarm.wav" id="3_cfp6s"]
-[ext_resource type="AudioStream" uid="uid://xj1dih2h11oe" path="res://assets/TEMP_marbles_slip.wav" id="4_3eb25"]
+[ext_resource type="AudioStream" uid="uid://coom6nro1awpp" path="res://traps/marbles/assets/TEMP_marbles_disarm.wav" id="3_cfp6s"]
+[ext_resource type="AudioStream" uid="uid://xj1dih2h11oe" path="res://traps/marbles/assets/TEMP_marbles_slip.wav" id="4_3eb25"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6uuub"]
 radius = 30.0

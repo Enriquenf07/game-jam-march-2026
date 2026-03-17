@@ -2,15 +2,15 @@
 
 [ext_resource type="Script" uid="uid://dsfjjhg0upe7p" path="res://traps/banana/banana_trap.gd" id="1_71s8c"]
 [ext_resource type="Script" uid="uid://fpin7rm4san6" path="res://object/interactable_object.gd" id="2_6vc60"]
-[ext_resource type="Texture2D" uid="uid://cilyubsc8n5w1" path="res://assets/TEMP_banana_peel.png" id="2_lgx3o"]
-[ext_resource type="AudioStream" uid="uid://q4jgkx2ybo0p" path="res://assets/TEMP_banana_disarm.wav" id="3_u5qeu"]
-[ext_resource type="AudioStream" uid="uid://dkwtaifihobq7" path="res://assets/TEMP_banana_slip.wav" id="3_xfo5d"]
+[ext_resource type="Texture2D" uid="uid://cs6qfufs118gu" path="res://traps/banana/assets/banana_peel_-_64x64.png" id="2_u5qeu"]
+[ext_resource type="AudioStream" uid="uid://q4jgkx2ybo0p" path="res://traps/banana/assets/TEMP_banana_disarm.wav" id="3_u5qeu"]
+[ext_resource type="AudioStream" uid="uid://dkwtaifihobq7" path="res://traps/banana/assets/TEMP_banana_slip.wav" id="3_xfo5d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lgx3o"]
-radius = 32.0
+radius = 21.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6vc60"]
-radius = 44.0
+radius = 33.0
 
 [node name="BananaTrap" type="Area2D" unique_id=1649020604 node_paths=PackedStringArray("_trap_visual", "_trap_trigger_collision", "_disarm_sound", "_trap_trigger_sound", "_trap_interaction_collision")]
 script = ExtResource("1_71s8c")
@@ -23,7 +23,8 @@ _trap_interaction_collision = NodePath("InteractableArea/InteractionCollision")
 metadata/_custom_type_script = "uid://dsfjjhg0upe7p"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=534856790]
-texture = ExtResource("2_lgx3o")
+position = Vector2(1, -9)
+texture = ExtResource("2_u5qeu")
 
 [node name="TrapCollision" type="CollisionShape2D" parent="." unique_id=1159727633]
 shape = SubResource("CircleShape2D_lgx3o")

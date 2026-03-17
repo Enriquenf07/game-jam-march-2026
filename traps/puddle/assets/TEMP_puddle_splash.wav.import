@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cew7krf8jy5ix"
-path="res://.godot/imported/TEMP_puddle_splash.wav-6082a9c8339c31520803931f354cde3f.sample"
+path="res://.godot/imported/TEMP_puddle_splash.wav-5feb58c33e91a91c184a68e5a2e587f0.sample"
 
 [deps]
 
-source_file="res://assets/TEMP_puddle_splash.wav"
-dest_files=["res://.godot/imported/TEMP_puddle_splash.wav-6082a9c8339c31520803931f354cde3f.sample"]
+source_file="res://traps/puddle/assets/TEMP_puddle_splash.wav"
+dest_files=["res://.godot/imported/TEMP_puddle_splash.wav-5feb58c33e91a91c184a68e5a2e587f0.sample"]
 
 [params]
 

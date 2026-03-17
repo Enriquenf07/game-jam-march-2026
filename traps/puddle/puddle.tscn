@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://hjrqcu6wi22w"]
 
 [ext_resource type="Script" uid="uid://d2dyfh18ssu08" path="res://traps/puddle/puddle.gd" id="1_gv67p"]
-[ext_resource type="Texture2D" uid="uid://cqcfuygdhdiws" path="res://assets/TEMP_puddle.png" id="2_x5rcb"]
-[ext_resource type="AudioStream" uid="uid://bxgiedomh7gcb" path="res://assets/TEMP_puddle_disarm.wav" id="3_x4rcs"]
-[ext_resource type="AudioStream" uid="uid://cew7krf8jy5ix" path="res://assets/TEMP_puddle_splash.wav" id="4_4lmy7"]
+[ext_resource type="Texture2D" uid="uid://cqcfuygdhdiws" path="res://traps/puddle/assets/TEMP_puddle.png" id="2_x5rcb"]
+[ext_resource type="AudioStream" uid="uid://bxgiedomh7gcb" path="res://traps/puddle/assets/TEMP_puddle_disarm.wav" id="3_x4rcs"]
+[ext_resource type="AudioStream" uid="uid://cew7krf8jy5ix" path="res://traps/puddle/assets/TEMP_puddle_splash.wav" id="4_4lmy7"]
 [ext_resource type="Script" uid="uid://fpin7rm4san6" path="res://object/interactable_object.gd" id="4_s52k6"]
-[ext_resource type="AudioStream" uid="uid://0eu4afeebqr0" path="res://assets/TEMP_puddle_slip.wav" id="5_rdwt2"]
+[ext_resource type="AudioStream" uid="uid://0eu4afeebqr0" path="res://traps/puddle/assets/TEMP_puddle_slip.wav" id="5_rdwt2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x5rcb"]
 radius = 28.0

@@ -15,10 +15,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ai45w"]
 size = Vector2(720, 224)
 
-[node name="Node2D" type="Node2D" unique_id=148939300 node_paths=PackedStringArray("hud", "camera")]
+[node name="Node2D" type="Node2D" unique_id=148939300 node_paths=PackedStringArray("hud", "camera", "canvaModulate")]
 script = ExtResource("1_4717r")
 hud = NodePath("Hud")
 camera = NodePath("Camera")
+canvaModulate = NodePath("CanvasModulate")
 metadata/_custom_type_script = "uid://yyqd8rad7pha"
 
 [node name="Camera" type="Camera2D" parent="." unique_id=1564084660]

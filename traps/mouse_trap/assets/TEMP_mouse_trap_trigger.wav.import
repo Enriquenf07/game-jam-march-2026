@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cq8afpavmk5e5"
-path="res://.godot/imported/TEMP_mouse_trap_trigger.wav-416a6bd16afc3ccd5e3e428b08fdf902.sample"
+path="res://.godot/imported/TEMP_mouse_trap_trigger.wav-8ec9a91df481c4f4af35afed65ba949f.sample"
 
 [deps]
 
-source_file="res://assets/TEMP_mouse_trap_trigger.wav"
-dest_files=["res://.godot/imported/TEMP_mouse_trap_trigger.wav-416a6bd16afc3ccd5e3e428b08fdf902.sample"]
+source_file="res://traps/mouse_trap/assets/TEMP_mouse_trap_trigger.wav"
+dest_files=["res://.godot/imported/TEMP_mouse_trap_trigger.wav-8ec9a91df481c4f4af35afed65ba949f.sample"]
 
 [params]
 

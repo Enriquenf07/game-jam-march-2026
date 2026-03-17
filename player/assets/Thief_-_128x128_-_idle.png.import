@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wusc5l0jiklr"
-path="res://.godot/imported/TEMP_mouse_trap_disarmed.png-3fa8c40c826de39f6d779c606dd9f70f.ctex"
+uid="uid://dto05yhxl8q30"
+path="res://.godot/imported/Thief_-_128x128_-_idle.png-d57b549c16def90a605ee7924a1ddfec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TEMP_mouse_trap_disarmed.png"
-dest_files=["res://.godot/imported/TEMP_mouse_trap_disarmed.png-3fa8c40c826de39f6d779c606dd9f70f.ctex"]
+source_file="res://player/assets/Thief_-_128x128_-_idle.png"
+dest_files=["res://.godot/imported/Thief_-_128x128_-_idle.png-d57b549c16def90a605ee7924a1ddfec.ctex"]
 
 [params]
 

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://gvbi2d7td26c"]
 
 [ext_resource type="Script" uid="uid://gkexexnul427" path="res://traps/floorboard/floorboard.gd" id="1_ch6ii"]
-[ext_resource type="Texture2D" uid="uid://wqr3uvl4rk0x" path="res://assets/TEMP_floorboard.png" id="1_x4wjo"]
-[ext_resource type="AudioStream" uid="uid://wsh4r45a1o2l" path="res://assets/TEMP_squeak.wav" id="3_4ib02"]
-[ext_resource type="AudioStream" uid="uid://df46rpiwwqdxr" path="res://assets/TEMP_floorboard_disarm.wav" id="3_eglyy"]
+[ext_resource type="Texture2D" uid="uid://wqr3uvl4rk0x" path="res://traps/floorboard/assets/TEMP_floorboard.png" id="1_x4wjo"]
+[ext_resource type="AudioStream" uid="uid://wsh4r45a1o2l" path="res://traps/floorboard/assets/TEMP_squeak.wav" id="3_4ib02"]
+[ext_resource type="AudioStream" uid="uid://df46rpiwwqdxr" path="res://traps/floorboard/assets/TEMP_floorboard_disarm.wav" id="3_eglyy"]
 [ext_resource type="Script" uid="uid://fpin7rm4san6" path="res://object/interactable_object.gd" id="4_d61ba"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imx1i"]

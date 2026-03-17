@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cilyubsc8n5w1"
-path="res://.godot/imported/TEMP_banana_peel.png-53be7885dc16cbf42be4130070263c92.ctex"
+uid="uid://wqr3uvl4rk0x"
+path="res://.godot/imported/TEMP_floorboard.png-6ceaa1ed16d222e359ee445c4be408df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TEMP_banana_peel.png"
-dest_files=["res://.godot/imported/TEMP_banana_peel.png-53be7885dc16cbf42be4130070263c92.ctex"]
+source_file="res://traps/floorboard/assets/TEMP_floorboard.png"
+dest_files=["res://.godot/imported/TEMP_floorboard.png-6ceaa1ed16d222e359ee445c4be408df.ctex"]
 
 [params]
 

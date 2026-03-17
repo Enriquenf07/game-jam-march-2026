@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wqr3uvl4rk0x"
-path="res://.godot/imported/TEMP_floorboard.png-6bf0f7a0d0137fc7f537e9548111bcf9.ctex"
+uid="uid://wusc5l0jiklr"
+path="res://.godot/imported/TEMP_mouse_trap_disarmed.png-79208122d025d8273e704a856c954892.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TEMP_floorboard.png"
-dest_files=["res://.godot/imported/TEMP_floorboard.png-6bf0f7a0d0137fc7f537e9548111bcf9.ctex"]
+source_file="res://traps/mouse_trap/assets/TEMP_mouse_trap_disarmed.png"
+dest_files=["res://.godot/imported/TEMP_mouse_trap_disarmed.png-79208122d025d8273e704a856c954892.ctex"]
 
 [params]
 
