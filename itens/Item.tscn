@@ -5,8 +5,9 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yctbf"]
 
-[node name="Item" type="Node2D" unique_id=16484559 node_paths=PackedStringArray("interactableArea")]
+[node name="Item" type="Node2D" unique_id=16484559 node_paths=PackedStringArray("sprite", "interactableArea")]
 script = ExtResource("1_1ervh")
+sprite = NodePath("Sprite2D")
 interactableArea = NodePath("InteractableObject")
 metadata/_custom_type_script = "uid://cc46qnu0b7yum"
 
@@ -19,3 +20,5 @@ metadata/_custom_type_script = "uid://fpin7rm4san6"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableObject" unique_id=790076784]
 shape = SubResource("CircleShape2D_yctbf")
 debug_color = Color(0.47308695, 0.58747935, 0.15200359, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1101105392]

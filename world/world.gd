@@ -4,11 +4,13 @@ class_name World
 @export var hud: Hud
 @export var camera: Camera2D
 @export var canvaModulate: CanvasModulate
+@export var pause_ui: PauseUI
 var player: Player
 var inventory = Inventory.new()
 
 
 func _ready() -> void:
+	pause_ui.change_inventory(inventory)
 	if(canvaModulate == null):
 		assert(canvaModulate != null, 'The world doesn’t have a canvas modulate.')
 	canvaModulate.color = Color.BLACK
@@ -20,6 +22,7 @@ func _ready() -> void:
 	
 
 func _refresh() -> void:
+	pause_ui.refresh_inventory()
 	var weight := 0.0
 	for item in inventory.items:
 		weight += item.weight

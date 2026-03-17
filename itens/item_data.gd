@@ -9,3 +9,5 @@ class_name ItemData
 @export var weight: float
 @export var noise_multiplier: float = 1.0
 @export var tool_type: String
+@export var can_stack: bool = true
+@export var amount: int = 1
