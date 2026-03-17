@@ -39,7 +39,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqu6x"]
-size = Vector2(31, 46)
+size = Vector2(36, 12)
 
 [sub_resource type="Gradient" id="Gradient_rkbax"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -60,7 +60,7 @@ sprite_frames = SubResource("SpriteFrames_rkbax")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=494601615]
-position = Vector2(3.5, 35)
+position = Vector2(4, 54)
 shape = SubResource("RectangleShape2D_kqu6x")
 
 [node name="body" type="Node2D" parent="." unique_id=482923969]
