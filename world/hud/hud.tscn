@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bxvbikmdrtff8"]
+
+[ext_resource type="Script" uid="uid://b14htclkw1aey" path="res://world/hud/hud.gd" id="1_n6na4"]
+
+[node name="Hud" type="CanvasLayer" unique_id=1438540739 node_paths=PackedStringArray("weight_label")]
+script = ExtResource("1_n6na4")
+weight_label = NodePath("Weight")
+metadata/_custom_type_script = "uid://b14htclkw1aey"
+
+[node name="Weight" type="Label" parent="." unique_id=194707028]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Weight: "

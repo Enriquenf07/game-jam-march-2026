@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://602avg8qg6xb"]
+
+[ext_resource type="Script" uid="uid://kd53v7wik11l" path="res://traps/mouse_trap/mouse_trap.gd" id="1_fvs2v"]
+[ext_resource type="Texture2D" uid="uid://brlk2u2nq1euu" path="res://assets/TEMP_mouse_trap_armed.png" id="2_fvs2v"]
+[ext_resource type="AudioStream" uid="uid://cq8afpavmk5e5" path="res://assets/TEMP_mouse_trap_trigger.wav" id="3_1ig7x"]
+[ext_resource type="Script" uid="uid://fpin7rm4san6" path="res://object/interactable_object.gd" id="3_fvs2v"]
+[ext_resource type="AudioStream" uid="uid://ciplvrpgjexj4" path="res://assets/TEMP_mouse_trap_hurt.wav" id="4_2jj4w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6tma0"]
+size = Vector2(54, 54)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6tma0"]
+radius = 320.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fvs2v"]
+radius = 384.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ig7x"]
+radius = 39.0
+
+[node name="MouseTrap" type="Area2D" unique_id=877290527 node_paths=PackedStringArray("_player_hurt_sound", "_player_hurt_collision", "_trap_audio_collision", "_trap_visual", "_trap_trigger_collision", "_disarm_sound", "_trap_trigger_sound", "_trap_interaction_collision")]
+script = ExtResource("1_fvs2v")
+_player_hurt_sound = NodePath("SoundArea/PlayerHurtSoundPlayer")
+_player_hurt_collision = NodePath("SoundArea/PlayerHurtSoundCollision")
+_trap_audio_collision = NodePath("SoundArea/SoundAreaCollision")
+_type_of_trap = 3
+_trap_visual = NodePath("TrapVisual")
+_trap_trigger_collision = NodePath("TrapCollision")
+_disarm_sound = NodePath("DisarmSoundPlayer")
+_trap_trigger_sound = NodePath("TrapActivationSoundPlayer")
+_trap_interaction_collision = NodePath("InteractableArea/InteractionCollision")
+metadata/_custom_type_script = "uid://bbcrcehk7g6b"
+
+[node name="TrapVisual" type="Sprite2D" parent="." unique_id=848609801]
+texture = ExtResource("2_fvs2v")
+
+[node name="TrapCollision" type="CollisionShape2D" parent="." unique_id=643581069]
+shape = SubResource("RectangleShape2D_6tma0")
+
+[node name="DisarmSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=77650762]
+stream = ExtResource("3_1ig7x")
+
+[node name="TrapActivationSoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1433791946]
+stream = ExtResource("3_1ig7x")
+
+[node name="SoundArea" type="Area2D" parent="." unique_id=651891787]
+
+[node name="SoundAreaCollision" type="CollisionShape2D" parent="SoundArea" unique_id=823945707]
+shape = SubResource("CircleShape2D_6tma0")
+disabled = true
+debug_color = Color(0.9764706, 0.101960786, 0.29411766, 0.41960785)
+
+[node name="PlayerHurtSoundPlayer" type="AudioStreamPlayer2D" parent="SoundArea" unique_id=1167360739]
+stream = ExtResource("4_2jj4w")
+
+[node name="PlayerHurtSoundCollision" type="CollisionShape2D" parent="SoundArea" unique_id=1062561098]
+shape = SubResource("CircleShape2D_fvs2v")
+disabled = true
+debug_color = Color(0.9764706, 0.101960786, 0.29411766, 0.41960785)
+
+[node name="InteractableArea" type="Area2D" parent="." unique_id=608612683]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("3_fvs2v")
+metadata/_custom_type_script = "uid://fpin7rm4san6"
+
+[node name="InteractionCollision" type="CollisionShape2D" parent="InteractableArea" unique_id=1834654984]
+shape = SubResource("CircleShape2D_1ig7x")
+debug_color = Color(0.9607843, 0, 0.5254902, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="trap_disarmed" from="." to="." method="_on_trap_disarmed"]
+[connection signal="finished" from="TrapActivationSoundPlayer" to="." method="_on_trap_activation_sound_finished"]
+[connection signal="finished" from="SoundArea/PlayerHurtSoundPlayer" to="." method="_on_player_hurt_sound_player_finished"]

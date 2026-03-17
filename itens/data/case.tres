@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://p1b61fm36elg"]
+
+[ext_resource type="Script" uid="uid://dwxwvxsckbbx7" path="res://itens/item_data.gd" id="1_8unsu"]
+
+[resource]
+script = ExtResource("1_8unsu")
+id = "1"
+display_name = "Case"
+value = 10
+weight = 1.0
+metadata/_custom_type_script = "uid://dwxwvxsckbbx7"

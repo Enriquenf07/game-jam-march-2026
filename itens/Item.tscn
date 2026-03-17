@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dlwantqj076u7"]
+
+[ext_resource type="Script" uid="uid://cc46qnu0b7yum" path="res://itens/base_item.gd" id="1_1ervh"]
+[ext_resource type="Script" uid="uid://fpin7rm4san6" path="res://object/interactable_object.gd" id="3_cdd75"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yctbf"]
+
+[node name="Item" type="Node2D" unique_id=16484559 node_paths=PackedStringArray("interactableArea")]
+script = ExtResource("1_1ervh")
+interactableArea = NodePath("InteractableObject")
+metadata/_custom_type_script = "uid://cc46qnu0b7yum"
+
+[node name="InteractableObject" type="Area2D" parent="." unique_id=1782519913]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("3_cdd75")
+metadata/_custom_type_script = "uid://fpin7rm4san6"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableObject" unique_id=790076784]
+shape = SubResource("CircleShape2D_yctbf")
+debug_color = Color(0.47308695, 0.58747935, 0.15200359, 0.41960785)

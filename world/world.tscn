@@ -1,16 +1,70 @@
 [gd_scene format=3 uid="uid://d2mjy2lf0mo6f"]
 
-[ext_resource type="PackedScene" uid="uid://mblekvuhtx8j" path="res://player/player.tscn" id="1_6xmxd"]
-[ext_resource type="Texture2D" uid="uid://i6i6um7oppva" path="res://assets/floor-2.png" id="1_tcf2h"]
+[ext_resource type="Script" uid="uid://yyqd8rad7pha" path="res://world/world.gd" id="1_4717r"]
+[ext_resource type="PackedScene" uid="uid://gvbi2d7td26c" path="res://traps/floorboard/floorboard.tscn" id="3_4717r"]
+[ext_resource type="PackedScene" uid="uid://de3paqyhcj6p2" path="res://traps/banana/BananaTrap.tscn" id="3_h5o24"]
+[ext_resource type="PackedScene" uid="uid://dlwantqj076u7" path="res://itens/Item.tscn" id="4_item"]
+[ext_resource type="Resource" uid="uid://p1b61fm36elg" path="res://itens/data/case.tres" id="5_itemdata"]
+[ext_resource type="PackedScene" uid="uid://bxvbikmdrtff8" path="res://world/hud/hud.tscn" id="6_hud"]
+[ext_resource type="TileSet" uid="uid://b2rpemrsjwxkn" path="res://room/map_tile_set.tres" id="7_tileset"]
+[ext_resource type="PackedScene" uid="uid://bfeqvwpqr1iw3" path="res://room/Room.tscn" id="8_room"]
+[ext_resource type="PackedScene" uid="uid://cbhd62ic6mqpb" path="res://traps/marbles/marbles.tscn" id="9_marbles"]
+[ext_resource type="PackedScene" uid="uid://602avg8qg6xb" path="res://traps/mouse_trap/mouse_trap.tscn" id="10_mouse"]
+[ext_resource type="PackedScene" uid="uid://hjrqcu6wi22w" path="res://traps/puddle/puddle.tscn" id="11_puddle"]
 
-[node name="Node2D" type="Node2D" unique_id=408905311]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ai45w"]
+size = Vector2(720, 224)
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=886117801]
-offset_right = 1134.0
-offset_bottom = 648.0
-texture = ExtResource("1_tcf2h")
+[node name="Node2D" type="Node2D" unique_id=148939300 node_paths=PackedStringArray("hud", "camera")]
+script = ExtResource("1_4717r")
+hud = NodePath("Hud")
+camera = NodePath("Camera")
+metadata/_custom_type_script = "uid://yyqd8rad7pha"
 
-[node name="Player" parent="." unique_id=1372084186 instance=ExtResource("1_6xmxd")]
+[node name="Camera" type="Camera2D" parent="." unique_id=1564084660]
+unique_name_in_owner = true
 
-[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=347723142]
+[node name="Floorboard" parent="." unique_id=1354571515 instance=ExtResource("3_4717r")]
+position = Vector2(439, 259)
+
+[node name="BananaTrap" parent="." unique_id=1649020604 instance=ExtResource("3_h5o24")]
+position = Vector2(-174, 132)
+
+[node name="Marbles" parent="." unique_id=749801095 instance=ExtResource("9_marbles")]
+position = Vector2(155, 130)
+
+[node name="MouseTrap" parent="." unique_id=877290527 instance=ExtResource("10_mouse")]
+position = Vector2(-174, 290)
+
+[node name="Puddle" parent="." unique_id=1615284829 instance=ExtResource("11_puddle")]
+position = Vector2(342, 39)
+
+[node name="Item" parent="." unique_id=16484559 instance=ExtResource("4_item")]
+data = ExtResource("5_itemdata")
+
+[node name="Hud" parent="." unique_id=1405528010 instance=ExtResource("6_hud")]
+
+[node name="Room" parent="." unique_id=1779495073 node_paths=PackedStringArray("room_area") instance=ExtResource("8_room")]
+position = Vector2(-5, -1)
+tile_set = ExtResource("7_tileset")
+room_area = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="Room" unique_id=1221307362]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room/Area2D" unique_id=1159814772]
+position = Vector2(215, -48)
+shape = SubResource("RectangleShape2D_ai45w")
+
+[node name="Room2" parent="." unique_id=1398693397 node_paths=PackedStringArray("room_area") instance=ExtResource("8_room")]
+position = Vector2(-5, -225)
+tile_set = ExtResource("7_tileset")
+room_area = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="Room2" unique_id=1963894054]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room2/Area2D" unique_id=1993364368]
+position = Vector2(215, -48)
+shape = SubResource("RectangleShape2D_ai45w")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=668895164]
 color = Color(0, 0, 0, 1)
