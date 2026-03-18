@@ -15,6 +15,10 @@ run/main_scene="uid://d2mjy2lf0mo6f"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+LootEventBus="*uid://bbg7erk3fo37v"
+
 [importer_defaults]
 
 texture={
