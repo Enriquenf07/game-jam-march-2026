@@ -39,6 +39,8 @@ func _create_amount_label():
 	return label
 
 func _on_pressed(index):
+	if (inventory.items.size() == 0):
+		return
 	selected_item = inventory.items.get(index)
 	selected_item_ui.change_item(selected_item)
 
@@ -73,6 +75,8 @@ func refresh() -> void:
 	if inventory == null:
 		return
 	selected_item_ui.visible = false
+	if (inventory.items.size() == 0):
+		return
 	for i in range(inventory.MAX_SLOTS):
 		var item = inventory.items.get(i)
 		var text = slots_text.get(i)
@@ -83,7 +87,3 @@ func refresh() -> void:
 		if amount == null:
 			continue
 		amount.text = str(item.amount) if item != null else ''
-			
-		
-				
-	

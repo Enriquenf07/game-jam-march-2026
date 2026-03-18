@@ -11,15 +11,17 @@
 [ext_resource type="PackedScene" uid="uid://cbhd62ic6mqpb" path="res://traps/marbles/marbles.tscn" id="9_marbles"]
 [ext_resource type="PackedScene" uid="uid://602avg8qg6xb" path="res://traps/mouse_trap/mouse_trap.tscn" id="10_mouse"]
 [ext_resource type="PackedScene" uid="uid://hjrqcu6wi22w" path="res://traps/puddle/puddle.tscn" id="11_puddle"]
+[ext_resource type="PackedScene" uid="uid://dhqqk4mm3mkgx" path="res://ui/PauseUi/PauseUI.tscn" id="12_mad0u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ai45w"]
 size = Vector2(720, 224)
 
-[node name="Node2D" type="Node2D" unique_id=148939300 node_paths=PackedStringArray("hud", "camera", "canvaModulate")]
+[node name="Node2D" type="Node2D" unique_id=148939300 node_paths=PackedStringArray("hud", "camera", "canvaModulate", "pause_ui")]
 script = ExtResource("1_4717r")
 hud = NodePath("Hud")
 camera = NodePath("Camera")
 canvaModulate = NodePath("CanvasModulate")
+pause_ui = NodePath("PauseUi")
 metadata/_custom_type_script = "uid://yyqd8rad7pha"
 
 [node name="Camera" type="Camera2D" parent="." unique_id=1564084660]
@@ -69,3 +71,5 @@ shape = SubResource("RectangleShape2D_ai45w")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=668895164]
 color = Color(0, 0, 0, 1)
+
+[node name="PauseUi" parent="." unique_id=1167017787 instance=ExtResource("12_mad0u")]
