@@ -58,7 +58,7 @@ shape = SubResource("CircleShape2D_fvs2v")
 disabled = true
 debug_color = Color(0.9764706, 0.101960786, 0.29411766, 0.41960785)
 
-[node name="InteractableArea" type="Area2D" parent="." unique_id=608612683]
+[node name="InteractableArea" type="Area2D" parent="." unique_id=608612683 groups=["trap"]]
 unique_name_in_owner = true
 collision_layer = 2
 collision_mask = 0

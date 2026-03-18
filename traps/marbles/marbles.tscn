@@ -47,7 +47,7 @@ shape = SubResource("CircleShape2D_djhvq")
 disabled = true
 debug_color = Color(0.9764706, 0.101960786, 0.29411766, 0.41960785)
 
-[node name="InteractableArea" type="Area2D" parent="." unique_id=1486561654]
+[node name="InteractableArea" type="Area2D" parent="." unique_id=1486561654 groups=["trap"]]
 unique_name_in_owner = true
 collision_layer = 2
 script = ExtResource("3_6uuub")
