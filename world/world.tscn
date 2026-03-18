@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://602avg8qg6xb" path="res://traps/mouse_trap/mouse_trap.tscn" id="10_mouse"]
 [ext_resource type="PackedScene" uid="uid://hjrqcu6wi22w" path="res://traps/puddle/puddle.tscn" id="11_puddle"]
 [ext_resource type="PackedScene" uid="uid://dhqqk4mm3mkgx" path="res://ui/PauseUi/PauseUI.tscn" id="12_mad0u"]
+[ext_resource type="PackedScene" uid="uid://dsg4tspdufk0g" path="res://loot/cash.tscn" id="13_ocfjn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ai45w"]
 size = Vector2(720, 224)
@@ -73,3 +74,6 @@ shape = SubResource("RectangleShape2D_ai45w")
 color = Color(0, 0, 0, 1)
 
 [node name="PauseUi" parent="." unique_id=1167017787 instance=ExtResource("12_mad0u")]
+
+[node name="Cash" parent="." unique_id=1752094584 instance=ExtResource("13_ocfjn")]
+position = Vector2(50, 129)
