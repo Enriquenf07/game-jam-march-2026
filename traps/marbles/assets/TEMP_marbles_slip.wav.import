@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://xj1dih2h11oe"
-path="res://.godot/imported/TEMP_marbles_slip.wav-a2e4dcb89183d919c78e28e9568f7a9f.sample"
+path="res://.godot/imported/TEMP_marbles_slip.wav-51b357a4fb1be4b9a667c2440947a539.sample"
 
 [deps]
 
-source_file="res://assets/TEMP_marbles_slip.wav"
-dest_files=["res://.godot/imported/TEMP_marbles_slip.wav-a2e4dcb89183d919c78e28e9568f7a9f.sample"]
+source_file="res://traps/marbles/assets/TEMP_marbles_slip.wav"
+dest_files=["res://.godot/imported/TEMP_marbles_slip.wav-51b357a4fb1be4b9a667c2440947a539.sample"]
 
 [params]
 

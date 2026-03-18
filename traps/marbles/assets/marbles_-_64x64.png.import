@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c653hfafmv60p"
-path="res://.godot/imported/TEMP_floorboard_disarmed.png-225df3654e1ce48a44bcc052c12192a1.ctex"
+uid="uid://mtr5psq6exx8"
+path="res://.godot/imported/marbles_-_64x64.png-21adf828a07200999c541aadbb84e89b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TEMP_floorboard_disarmed.png"
-dest_files=["res://.godot/imported/TEMP_floorboard_disarmed.png-225df3654e1ce48a44bcc052c12192a1.ctex"]
+source_file="res://traps/marbles/assets/marbles_-_64x64.png"
+dest_files=["res://.godot/imported/marbles_-_64x64.png-21adf828a07200999c541aadbb84e89b.ctex"]
 
 [params]
 

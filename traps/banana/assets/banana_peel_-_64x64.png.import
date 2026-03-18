@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brlk2u2nq1euu"
-path="res://.godot/imported/TEMP_mouse_trap_armed.png-d2449e67689501db21f8596503f004f6.ctex"
+uid="uid://cbxcxbi3xdux7"
+path="res://.godot/imported/banana_peel_-_64x64.png-5737d6b97f006dabb60af1babb37f7a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TEMP_mouse_trap_armed.png"
-dest_files=["res://.godot/imported/TEMP_mouse_trap_armed.png-d2449e67689501db21f8596503f004f6.ctex"]
+source_file="res://traps/banana/assets/banana_peel_-_64x64.png"
+dest_files=["res://.godot/imported/banana_peel_-_64x64.png-5737d6b97f006dabb60af1babb37f7a0.ctex"]
 
 [params]
 

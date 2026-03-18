@@ -1,7 +1,7 @@
 class_name Floorboard
 extends ContinuousNoiseTrap
 
-var _disarmed_texture: Texture = preload("res://assets/TEMP_floorboard_disarmed.png")
+var _disarmed_texture: Texture = preload("res://traps/floorboard/assets/TEMP_floorboard_disarmed.png")
 
 func _disarm_decorator():
 	print("floorboard disarmed")

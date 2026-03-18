@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b54tg1pvaawui"
-path="res://.godot/imported/TEMP_marbles.png-6adc521280a115e863a672533f10abfb.ctex"
+uid="uid://dto05yhxl8q30"
+path="res://.godot/imported/Thief_-_128x128_-_idle.png-d57b549c16def90a605ee7924a1ddfec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TEMP_marbles.png"
-dest_files=["res://.godot/imported/TEMP_marbles.png-6adc521280a115e863a672533f10abfb.ctex"]
+source_file="res://player/assets/Thief_-_128x128_-_idle.png"
+dest_files=["res://.godot/imported/Thief_-_128x128_-_idle.png-d57b549c16def90a605ee7924a1ddfec.ctex"]
 
 [params]
 

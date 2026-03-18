@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://wsh4r45a1o2l"
-path="res://.godot/imported/TEMP_squeak.wav-ad1958c1ee5eab771612bd71f144dee2.sample"
+path="res://.godot/imported/TEMP_squeak.wav-f658e29c7f26cea762e7db496f28ea48.sample"
 
 [deps]
 
-source_file="res://assets/TEMP_squeak.wav"
-dest_files=["res://.godot/imported/TEMP_squeak.wav-ad1958c1ee5eab771612bd71f144dee2.sample"]
+source_file="res://traps/floorboard/assets/TEMP_squeak.wav"
+dest_files=["res://.godot/imported/TEMP_squeak.wav-f658e29c7f26cea762e7db496f28ea48.sample"]
 
 [params]
 

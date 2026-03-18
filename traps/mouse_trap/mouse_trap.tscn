@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://602avg8qg6xb"]
 
 [ext_resource type="Script" uid="uid://kd53v7wik11l" path="res://traps/mouse_trap/mouse_trap.gd" id="1_fvs2v"]
-[ext_resource type="Texture2D" uid="uid://brlk2u2nq1euu" path="res://assets/TEMP_mouse_trap_armed.png" id="2_fvs2v"]
-[ext_resource type="AudioStream" uid="uid://cq8afpavmk5e5" path="res://assets/TEMP_mouse_trap_trigger.wav" id="3_1ig7x"]
+[ext_resource type="Texture2D" uid="uid://brlk2u2nq1euu" path="res://traps/mouse_trap/assets/TEMP_mouse_trap_armed.png" id="2_fvs2v"]
+[ext_resource type="AudioStream" uid="uid://cq8afpavmk5e5" path="res://traps/mouse_trap/assets/TEMP_mouse_trap_trigger.wav" id="3_1ig7x"]
 [ext_resource type="Script" uid="uid://fpin7rm4san6" path="res://object/interactable_object.gd" id="3_fvs2v"]
-[ext_resource type="AudioStream" uid="uid://ciplvrpgjexj4" path="res://assets/TEMP_mouse_trap_hurt.wav" id="4_2jj4w"]
+[ext_resource type="AudioStream" uid="uid://ciplvrpgjexj4" path="res://traps/mouse_trap/assets/TEMP_mouse_trap_hurt.wav" id="4_2jj4w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6tma0"]
 size = Vector2(54, 54)

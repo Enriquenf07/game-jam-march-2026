@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dkwtaifihobq7"
-path="res://.godot/imported/TEMP_banana_slip.wav-754d252fbb691703a7baf1871d84bf25.sample"
+path="res://.godot/imported/TEMP_banana_slip.wav-415c6d3a4053320cb7fbcbee773ef492.sample"
 
 [deps]
 
-source_file="res://assets/TEMP_banana_slip.wav"
-dest_files=["res://.godot/imported/TEMP_banana_slip.wav-754d252fbb691703a7baf1871d84bf25.sample"]
+source_file="res://traps/banana/assets/TEMP_banana_slip.wav"
+dest_files=["res://.godot/imported/TEMP_banana_slip.wav-415c6d3a4053320cb7fbcbee773ef492.sample"]
 
 [params]
 
