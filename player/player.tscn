@@ -90,11 +90,12 @@ _data = {
 &"disarming": SubResource("Animation_g6k8r")
 }
 
-[node name="Player" type="CharacterBody2D" unique_id=1372084186 node_paths=PackedStringArray("_debug_direction_label", "_player_visual", "_disarm_progress_bar") groups=["player"]]
+[node name="Player" type="CharacterBody2D" unique_id=1372084186 node_paths=PackedStringArray("_debug_direction_label", "_player_visual", "_disarm_progress_bar", "_interaction_prompt") groups=["player"]]
 script = ExtResource("1_oul6g")
 _debug_direction_label = NodePath("PlayerDebugLayer/DebugContainer/DirectionLabel")
 _player_visual = NodePath("AnimatedSprite2D")
 _disarm_progress_bar = NodePath("DisarmProgressBar")
+_interaction_prompt = NodePath("InteractionPrompt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1604162737]
 sprite_frames = SubResource("SpriteFrames_rkbax")
@@ -149,6 +150,23 @@ _progress_animator = NodePath("DisarmingAnimatior")
 
 [node name="DisarmingAnimatior" type="AnimationPlayer" parent="DisarmProgressBar" unique_id=562020868]
 libraries/ = SubResource("AnimationLibrary_boad6")
+
+[node name="InteractionPrompt" type="Label" parent="." unique_id=465891486]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -39.0
+offset_top = -90.0
+offset_right = 39.0
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "E - Disarm"
+horizontal_alignment = 2
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_finished" from="DisarmProgressBar/DisarmingAnimatior" to="." method="_on_disarming_animatior_animation_finished"]

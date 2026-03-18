@@ -21,6 +21,7 @@ var inventory: Inventory
 var trap_to_disarm: TrapBase
 var _direction_when_disarming: MovingDirection = MovingDirection.NONE
 var _is_disarming = false
+@export var _interaction_prompt: Label
 
 func get_speed():
 	return SPEED if !is_running else SPEED * 1.5
@@ -28,6 +29,21 @@ func get_speed():
 func _process(_delta: float) -> void:
 	if (_debug_direction_label.visible):
 		_debug_direction_label.text = "Movement Direction: " + _direction_as_string(_current_direction)
+	_determine_interaction_prompt()
+
+func _determine_interaction_prompt() -> void:
+	if (_is_disarming or not ray_cast.is_colliding()):
+		_interaction_prompt.hide()
+		return
+	var collider = ray_cast.get_collider()
+	if (collider is not InteractableObject):
+		return
+	_display_interaction_prompt(collider)
+
+func _display_interaction_prompt(interactable: InteractableObject):
+	if (interactable.is_in_group("trap")):
+		_interaction_prompt.text = "E - Disarm"
+		_interaction_prompt.show()
 
 func _direction_as_string(direction: MovingDirection) -> String:
 	match direction:
@@ -93,7 +109,7 @@ func set_sliding_direction(movingDirection: MovingDirection) -> Vector2:
 		MovingDirection.RIGHT:
 			return Vector2.RIGHT * SLIPPING_SPEED
 	return Vector2.ZERO
-	
+
 func _unhandled_input(event: InputEvent) -> void:
 	if(event.is_action_pressed("run") and not _is_slipping):
 		is_running = true
