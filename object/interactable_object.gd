@@ -5,5 +5,3 @@ signal interacted
 
 func on_interaction(player: Player):
 	interacted.emit(player)
-
-	

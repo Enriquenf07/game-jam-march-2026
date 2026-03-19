@@ -35,7 +35,7 @@ stream = ExtResource("3_u5qeu")
 [node name="TrapActivationSoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1533999276]
 stream = ExtResource("3_xfo5d")
 
-[node name="InteractableArea" type="Area2D" parent="." unique_id=1445917597]
+[node name="InteractableArea" type="Area2D" parent="." unique_id=1445917597 groups=["trap"]]
 unique_name_in_owner = true
 collision_layer = 2
 collision_mask = 0
