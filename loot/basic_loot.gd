@@ -10,6 +10,7 @@ extends Area2D
 
 func _ready() -> void:
 	loot_value_text.text = "$" + str(loot_value)
+	loot_collection_sound.pitch_scale = randf_range(0.95, 1.05)
 
 func _on_body_entered(body: Node2D) -> void:
 	if (not body.is_in_group("player")):

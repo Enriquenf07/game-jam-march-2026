@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://bp7pfs500k1fq"]
+
+[ext_resource type="Script" uid="uid://b18l85b06qtbf" path="res://loot/basic_loot.gd" id="1_e8brt"]
+[ext_resource type="Texture2D" uid="uid://67hmx35qvt6k" path="res://loot/assets/TEMP_jewelry_loot.png" id="2_e8brt"]
+[ext_resource type="AudioStream" uid="uid://nvtfqvpskg68" path="res://loot/assets/TEMP_cash_pickup.wav" id="3_5egxr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fwtsj"]
+radius = 34.058773
+
+[sub_resource type="Animation" id="Animation_ckvu6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-20, -23)]
+}
+
+[sub_resource type="Animation" id="Animation_4bogx"]
+resource_name = "loot_value_float"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-20, -23), Vector2(-20, -71)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bugu0"]
+_data = {
+&"RESET": SubResource("Animation_ckvu6"),
+&"loot_value_float": SubResource("Animation_4bogx")
+}
+
+[node name="Jewelry" type="Area2D" unique_id=1752094584 node_paths=PackedStringArray("loot_visual", "loot_collision", "loot_collection_sound", "loot_value_text", "loot_value_animation")]
+script = ExtResource("1_e8brt")
+loot_value = 1000
+loot_visual = NodePath("LootVisual")
+loot_collision = NodePath("LootCollision")
+loot_collection_sound = NodePath("LootCollectionSoundPlayer")
+loot_value_text = NodePath("LootValueText")
+loot_value_animation = NodePath("LootValueText/LootValueAnimationPlayer")
+
+[node name="LootVisual" type="Sprite2D" parent="." unique_id=80223993]
+texture = ExtResource("2_e8brt")
+
+[node name="LootCollision" type="CollisionShape2D" parent="." unique_id=575496791]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_fwtsj")
+
+[node name="LootCollectionSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=69450956]
+stream = ExtResource("3_5egxr")
+
+[node name="LootValueText" type="Label" parent="." unique_id=648939092]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(6.8345666e-06, 0.7738233, 1.540184e-06, 1)
+text = "$100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LootValueAnimationPlayer" type="AnimationPlayer" parent="LootValueText" unique_id=1896309584]
+libraries/ = SubResource("AnimationLibrary_bugu0")
+speed_scale = 2.5
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="LootValueText/LootValueAnimationPlayer" to="." method="_on_loot_value_animation_player_animation_finished"]
