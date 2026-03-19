@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c653hfafmv60p"
-path="res://.godot/imported/TEMP_floorboard_disarmed.png-f90909ce2d8a1406acd8c32250835a99.ctex"
+uid="uid://du07dhe2xbdy0"
+path="res://.godot/imported/floor_-_wooden_planks_normal_-_64x64.png-b72ac9adad8dc629a3873229a9d55f38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://traps/floorboard/assets/TEMP_floorboard_disarmed.png"
-dest_files=["res://.godot/imported/TEMP_floorboard_disarmed.png-f90909ce2d8a1406acd8c32250835a99.ctex"]
+source_file="res://traps/floorboard/floor_-_wooden_planks_normal_-_64x64.png"
+dest_files=["res://.godot/imported/floor_-_wooden_planks_normal_-_64x64.png-b72ac9adad8dc629a3873229a9d55f38.ctex"]
 
 [params]
 

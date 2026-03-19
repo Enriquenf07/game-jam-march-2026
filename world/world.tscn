@@ -73,3 +73,5 @@ shape = SubResource("RectangleShape2D_ai45w")
 color = Color(0, 0, 0, 1)
 
 [node name="PauseUi" parent="." unique_id=1167017787 instance=ExtResource("12_mad0u")]
+
+[editable path="MouseTrap"]

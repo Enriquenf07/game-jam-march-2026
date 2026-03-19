@@ -90,6 +90,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if(event.is_action_pressed('interact') and ray_cast.is_colliding()):
 		var collider := ray_cast.get_collider()
 		if(collider is InteractableObject):
+			print("interacted")
 			collider.on_interaction(self)
 			
 func set_is_still(flag: bool):

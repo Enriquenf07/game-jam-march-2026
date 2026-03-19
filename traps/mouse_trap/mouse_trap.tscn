@@ -2,9 +2,14 @@
 
 [ext_resource type="Script" uid="uid://kd53v7wik11l" path="res://traps/mouse_trap/mouse_trap.gd" id="1_fvs2v"]
 [ext_resource type="Texture2D" uid="uid://brlk2u2nq1euu" path="res://traps/mouse_trap/assets/TEMP_mouse_trap_armed.png" id="2_fvs2v"]
-[ext_resource type="AudioStream" uid="uid://cq8afpavmk5e5" path="res://traps/mouse_trap/assets/TEMP_mouse_trap_trigger.wav" id="3_1ig7x"]
+[ext_resource type="AudioStream" uid="uid://casq1nxffh6c8" path="res://traps/mouse_trap/assets/Snap_Mousetrap1.wav" id="2_j6bsh"]
+[ext_resource type="AudioStream" uid="uid://hv5yuq3o47gj" path="res://traps/mouse_trap/assets/Snap_Mousetrap2.wav" id="3_7eq31"]
 [ext_resource type="Script" uid="uid://fpin7rm4san6" path="res://object/interactable_object.gd" id="3_fvs2v"]
-[ext_resource type="AudioStream" uid="uid://ciplvrpgjexj4" path="res://traps/mouse_trap/assets/TEMP_mouse_trap_hurt.wav" id="4_2jj4w"]
+[ext_resource type="AudioStream" uid="uid://bnyvt2ps45k40" path="res://traps/mouse_trap/assets/Snap_Mousetrap3.wav" id="4_v48po"]
+[ext_resource type="AudioStream" uid="uid://dern6klhrbltb" path="res://traps/mouse_trap/assets/Male_LS_L_Scream01.wav" id="5_cy811"]
+[ext_resource type="AudioStream" uid="uid://dekx64lk8g1mi" path="res://traps/mouse_trap/assets/Male_LS_L_Scream02.wav" id="6_rulsv"]
+[ext_resource type="AudioStream" uid="uid://i66jcno35gut" path="res://traps/mouse_trap/assets/Male_Pain_Scream06.wav" id="7_4dtme"]
+[ext_resource type="AudioStream" uid="uid://cc2yo8dlil3f1" path="res://traps/mouse_trap/assets/Male_Pain_Scream08.wav" id="8_5fqlv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6tma0"]
 size = Vector2(54, 54)
@@ -20,7 +25,9 @@ radius = 39.0
 
 [node name="MouseTrap" type="Area2D" unique_id=877290527 node_paths=PackedStringArray("_player_hurt_sound", "_player_hurt_collision", "_trap_audio_collision", "_trap_visual", "_trap_trigger_collision", "_disarm_sound", "_trap_trigger_sound", "_trap_interaction_collision")]
 script = ExtResource("1_fvs2v")
+_trap_trigger_sounds = Array[AudioStream]([ExtResource("2_j6bsh"), ExtResource("3_7eq31"), ExtResource("4_v48po")])
 _player_hurt_sound = NodePath("SoundArea/PlayerHurtSoundPlayer")
+_player_hurt_sounds = Array[AudioStream]([ExtResource("5_cy811"), ExtResource("6_rulsv"), ExtResource("7_4dtme"), ExtResource("8_5fqlv")])
 _player_hurt_collision = NodePath("SoundArea/PlayerHurtSoundCollision")
 _trap_audio_collision = NodePath("SoundArea/SoundAreaCollision")
 _type_of_trap = 3
@@ -38,10 +45,10 @@ texture = ExtResource("2_fvs2v")
 shape = SubResource("RectangleShape2D_6tma0")
 
 [node name="DisarmSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=77650762]
-stream = ExtResource("3_1ig7x")
+stream = ExtResource("2_j6bsh")
 
 [node name="TrapActivationSoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1433791946]
-stream = ExtResource("3_1ig7x")
+stream = ExtResource("2_j6bsh")
 
 [node name="SoundArea" type="Area2D" parent="." unique_id=651891787]
 
@@ -51,7 +58,7 @@ disabled = true
 debug_color = Color(0.9764706, 0.101960786, 0.29411766, 0.41960785)
 
 [node name="PlayerHurtSoundPlayer" type="AudioStreamPlayer2D" parent="SoundArea" unique_id=1167360739]
-stream = ExtResource("4_2jj4w")
+stream = ExtResource("5_cy811")
 
 [node name="PlayerHurtSoundCollision" type="CollisionShape2D" parent="SoundArea" unique_id=1062561098]
 shape = SubResource("CircleShape2D_fvs2v")

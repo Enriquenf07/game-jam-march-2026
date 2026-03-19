@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://mtr5psq6exx8" path="res://traps/marbles/assets/marbles_-_64x64.png" id="2_cfp6s"]
 [ext_resource type="Script" uid="uid://fpin7rm4san6" path="res://object/interactable_object.gd" id="3_6uuub"]
 [ext_resource type="AudioStream" uid="uid://coom6nro1awpp" path="res://traps/marbles/assets/TEMP_marbles_disarm.wav" id="3_cfp6s"]
-[ext_resource type="AudioStream" uid="uid://xj1dih2h11oe" path="res://traps/marbles/assets/TEMP_marbles_slip.wav" id="4_3eb25"]
+[ext_resource type="AudioStream" uid="uid://c2r0xkmnne6it" path="res://traps/marbles/assets/Slip and fall.wav" id="4_cfp6s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6uuub"]
 radius = 22.0
@@ -38,7 +38,7 @@ shape = SubResource("CircleShape2D_6uuub")
 stream = ExtResource("3_cfp6s")
 
 [node name="TrapActivationSoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1175124490]
-stream = ExtResource("4_3eb25")
+stream = ExtResource("4_cfp6s")
 
 [node name="SoundArea" type="Area2D" parent="." unique_id=421094428]
 
