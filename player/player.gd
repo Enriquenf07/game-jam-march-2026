@@ -32,7 +32,7 @@ func _process(_delta: float) -> void:
 	_determine_interaction_prompt()
 
 func _determine_interaction_prompt() -> void:
-	if (_is_disarming or not ray_cast.is_colliding()):
+	if (_is_disarming or not ray_cast.is_colliding() or _is_slipping or _is_stunned):
 		_interaction_prompt.hide()
 		return
 	var collider = ray_cast.get_collider()
@@ -73,6 +73,7 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	move_and_slide()
 	_current_direction = determine_moving_direction(velocity)
+	_determine_movement_animation()
 
 func _check_disarm_cancelling(input_direction: Vector2) -> void:
 	var moving_direction = determine_moving_direction(input_direction)
@@ -110,6 +111,24 @@ func set_sliding_direction(movingDirection: MovingDirection) -> Vector2:
 			return Vector2.RIGHT * SLIPPING_SPEED
 	return Vector2.ZERO
 
+func _determine_movement_animation():
+	if (_is_slipping or _is_stunned or _is_disarming):
+		return
+	if (velocity == Vector2.ZERO):
+		_player_visual.play("idle")
+		return
+	elif (velocity.x < 0.0):
+		_player_visual.flip_h = true
+	elif (velocity.x > 0.0):
+		_player_visual.flip_h = false
+	_play_movement_animation()
+
+func _play_movement_animation():
+	if (is_running):
+		_player_visual.play("run")
+		return
+	_player_visual.play("sneak")
+
 func _unhandled_input(event: InputEvent) -> void:
 	if(event.is_action_pressed("run") and not _is_slipping):
 		is_running = true
@@ -124,6 +143,9 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func set_is_disarming(flag: bool) -> void:
 	_is_disarming = flag
+	if (_is_disarming):
+		_player_visual.play("disarming")
+		velocity = Vector2.ZERO
 
 func handle_trap_disarming() -> void:
 	_direction_when_disarming = _current_direction
@@ -144,6 +166,7 @@ func handle_trap_activation(trap: TrapBase.TrapType) -> void:
 		TrapBase.TrapType.BANANA:
 			_is_slipping = true
 			is_running = false
+			_player_visual.play("banana_slip")
 			print("slipped on banana")
 		TrapBase.TrapType.MARBLES:
 			_is_stunned = true

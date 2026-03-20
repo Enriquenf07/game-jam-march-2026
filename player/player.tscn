@@ -2,8 +2,11 @@
 
 [ext_resource type="Script" uid="uid://dc5kj63f84f4e" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="Texture2D" uid="uid://dto05yhxl8q30" path="res://player/assets/Thief_-_128x128_-_idle.png" id="2_g1dw6"]
+[ext_resource type="Texture2D" uid="uid://di5oetyn480gl" path="res://player/assets/Thief_-_128x128_-_run_1.png" id="3_hg6s5"]
 [ext_resource type="Texture2D" uid="uid://ddxwkulf6qgbm" path="res://ui/disarm/assets/TEMP_disarm_ui_under.png" id="3_qjkh3"]
+[ext_resource type="Texture2D" uid="uid://cxag831vvjv5o" path="res://player/assets/Thief_-_128x128_-_sneak.png" id="3_rgyib"]
 [ext_resource type="Texture2D" uid="uid://c8h3h2tu7uw8q" path="res://ui/disarm/assets/TEMP_disarm_ui_over.png" id="4_g6k8r"]
+[ext_resource type="Texture2D" uid="uid://cciv7m804ei3x" path="res://player/assets/Thief_-_128x128_-_sneak_2.png" id="4_hg6s5"]
 [ext_resource type="Texture2D" uid="uid://c8n6eyeujxnb2" path="res://ui/disarm/assets/TEMP_disarm_ui_progress.png" id="5_boad6"]
 [ext_resource type="Script" uid="uid://bfhdxp8oftejx" path="res://ui/disarm/disarm_ui.gd" id="6_g6k8r"]
 
@@ -14,7 +17,23 @@ animations = [{
 "texture": ExtResource("2_g1dw6")
 }],
 "loop": true,
-"name": &"default",
+"name": &"banana_slip",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_g1dw6")
+}],
+"loop": true,
+"name": &"disarming",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_g1dw6")
+}],
+"loop": true,
+"name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -40,6 +59,25 @@ animations = [{
 "loop": false,
 "name": &"puddle_slip",
 "speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hg6s5")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_rgyib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hg6s5")
+}],
+"loop": true,
+"name": &"sneak",
+"speed": 3.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqu6x"]
@@ -99,7 +137,8 @@ _interaction_prompt = NodePath("InteractionPrompt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1604162737]
 sprite_frames = SubResource("SpriteFrames_rkbax")
-autoplay = "default"
+animation = &"disarming"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=494601615]
 position = Vector2(4, 54)
