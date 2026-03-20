@@ -2,12 +2,29 @@
 
 [ext_resource type="Script" uid="uid://b14htclkw1aey" path="res://world/hud/hud.gd" id="1_n6na4"]
 
-[node name="Hud" type="CanvasLayer" unique_id=1438540739 node_paths=PackedStringArray("weight_label")]
+[node name="Hud" type="CanvasLayer" unique_id=1438540739 node_paths=PackedStringArray("weight_label", "money_label")]
 script = ExtResource("1_n6na4")
-weight_label = NodePath("Weight")
+weight_label = NodePath("Panel/VBoxContainer/Weight")
+money_label = NodePath("Panel/VBoxContainer/Money")
 metadata/_custom_type_script = "uid://b14htclkw1aey"
 
-[node name="Weight" type="Label" parent="." unique_id=194707028]
+[node name="Panel" type="Panel" parent="." unique_id=1558494572]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -134.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=583440588]
+layout_mode = 0
 offset_right = 40.0
-offset_bottom = 23.0
-text = "Weight: "
+offset_bottom = 40.0
+
+[node name="Weight" type="Label" parent="Panel/VBoxContainer" unique_id=1843874156]
+layout_mode = 2
+text = "Weight ?"
+
+[node name="Money" type="Label" parent="Panel/VBoxContainer" unique_id=586987532]
+layout_mode = 2
+text = "Money: $0"

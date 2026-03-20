@@ -6,15 +6,15 @@ extends ContinuousNoiseTrap
 
 func _process(_delta: float) -> void:
 	# TODO: call the player method "slip()" if the player is running
-	if (_is_running()):
+	if (_player_in_trap != null and _is_running()):
+		_player_in_trap.slip_on_puddle()
 		_slipping_sound_player.play()
 		_slipping_sound_collision.set_deferred("disabled", false)
 		return
 	super._process(_delta)
 
 func _is_running() -> bool:
-	# TODO: check if the player is moving, in the trap, and holding the run button
-	return false
+	return _player_in_trap.is_running and _player_in_trap.velocity != Vector2.ZERO
 
 func _disarm_decorator():
 	print("puddle disarmed")

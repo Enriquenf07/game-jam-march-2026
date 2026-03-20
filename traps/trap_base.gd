@@ -16,7 +16,7 @@ enum TrapType {FLOORBOARD, BANANA, MARBLES, MOUSE_TRAP, PUDDLE}
 
 func _ready() -> void:
 	assert((time_to_disable > 0.0), name + " has a disable time of 0 or less!")
-	interactableArea.connect("interacted", _disarm)
+	interactableArea.connect("interacted", _on_trap_interacted)
 
 func _on_body_entered(body: Node2D) -> void:
 	if (not body.is_in_group("player") or not body.has_method("handle_trap_activation")):
@@ -28,10 +28,12 @@ func _on_body_entered(body: Node2D) -> void:
 func _disarm_decorator():
 	pass
 
-func _disarm(player: Player) -> void:
-	player.set_is_still(true)
-	await get_tree().create_timer(time_to_disable).timeout
-	player.set_is_still(false)
+func _on_trap_interacted(player: Player) -> void:
+	player.set_is_disarming(true)
+	player.trap_to_disarm = self
+	player.handle_trap_disarming()
+
+func disarm() -> void:
 	_trap_trigger_collision.set_deferred("disabled", true)
 	_trap_interaction_collision.set_deferred("disabled", true)
 	if (_type_of_trap != TrapType.MOUSE_TRAP):

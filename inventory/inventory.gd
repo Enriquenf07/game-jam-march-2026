@@ -5,20 +5,32 @@ signal item_added(item: ItemData)
 signal item_removed(item: ItemData)
 signal inventory_changed
 
-const MAX_SLOTS = 12
+const MAX_SLOTS = 16
 
 var items: Array[ItemData] = []
+
+func _ready() -> void:
+	items.resize(MAX_SLOTS)
 
 func add_item(item: ItemData) -> bool:
 	if items.size() >= MAX_SLOTS:
 		return false
-	items.append(item)
+	var item_exist = items.has(item)
+	print(item_exist)
+	if(item_exist and item.can_stack):
+		item.amount += 1
+	else:
+		items.append(item)
 	item_added.emit(item)
 	inventory_changed.emit()
 	return true
 
 func remove_item(item: ItemData) -> void:
-	items.erase(item)
+	var item_exist = items.has(item)
+	if(item_exist and item.can_stack and item.amount > 1):
+		item.amount -= 1
+	else:
+		items.erase(item)
 	item_removed.emit(item)
 	inventory_changed.emit()
 
