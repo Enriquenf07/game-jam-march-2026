@@ -1,20 +1,19 @@
-Extends Node
+extends Node
 class_name State
 
 var entity: Enemy
 
 func set_entity(entity: Enemy) -> void:
-    self.entity = entity
+	self.entity = entity
 
 func get_entity() -> Enemy:
-    return entity
+	return entity
 
 func enter() -> void:
-    pass
+	pass
 
 func exit() -> void:
-    pass
+	pass
 
 func update(delta: float) -> void:  
-    pass
-
+	pass

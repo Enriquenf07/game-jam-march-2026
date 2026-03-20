@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bxvbikmdrtff8"]
 
 [ext_resource type="Script" uid="uid://b14htclkw1aey" path="res://world/hud/hud.gd" id="1_n6na4"]
+[ext_resource type="Texture2D" uid="uid://dmqmgtxcxqfhg" path="res://icon.svg" id="2_perbb"]
 
 [node name="Hud" type="CanvasLayer" unique_id=1438540739 node_paths=PackedStringArray("weight_label", "money_label")]
 script = ExtResource("1_n6na4")
@@ -28,3 +29,9 @@ text = "Weight ?"
 [node name="Money" type="Label" parent="Panel/VBoxContainer" unique_id=586987532]
 layout_mode = 2
 text = "Money: $0"
+
+[node name="DangerIcon" type="TextureRect" parent="Panel/VBoxContainer" unique_id=1624481659]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+texture = ExtResource("2_perbb")
