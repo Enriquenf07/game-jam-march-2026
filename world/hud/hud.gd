@@ -4,6 +4,7 @@ class_name Hud
 @export var weight_label: Label
 @export var money_label: Label
 var _money: int
+@export var police_timer: EscapeTimer
 
 func _ready() -> void:
 	LootEventBus.connect("loot_collected", _on_loot_collected)

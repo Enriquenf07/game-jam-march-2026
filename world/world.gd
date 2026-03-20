@@ -18,6 +18,8 @@ func _ready() -> void:
 	var factory := PlayerFactory.new()
 	player = factory.create(Vector2(0, 0), self, inventory)
 	inventory.inventory_changed.connect(_refresh)
+	hud.police_timer.start_timer()
+	hud.police_timer.connect("police_arrived", _on_police_arrived)
 
 func _refresh() -> void:
 	pause_ui.refresh_inventory()
@@ -30,3 +32,6 @@ func _physics_process(delta: float) -> void:
 	if(player != null):
 		var target_pos = player.global_position
 		camera.global_position = camera.global_position.lerp(target_pos, lerp_speed * delta)
+
+func _on_police_arrived():
+	print("Game Over!")

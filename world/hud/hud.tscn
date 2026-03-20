@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://bxvbikmdrtff8"]
 
 [ext_resource type="Script" uid="uid://b14htclkw1aey" path="res://world/hud/hud.gd" id="1_n6na4"]
+[ext_resource type="PackedScene" uid="uid://drymm7hwxrw7s" path="res://ui/escape_timer/escape_timer.tscn" id="2_perbb"]
 
-[node name="Hud" type="CanvasLayer" unique_id=1438540739 node_paths=PackedStringArray("weight_label", "money_label")]
+[node name="Hud" type="CanvasLayer" unique_id=1438540739 node_paths=PackedStringArray("weight_label", "money_label", "police_timer")]
 script = ExtResource("1_n6na4")
 weight_label = NodePath("Panel/VBoxContainer/Weight")
 money_label = NodePath("Panel/VBoxContainer/Money")
+police_timer = NodePath("EscapeTimer")
 metadata/_custom_type_script = "uid://b14htclkw1aey"
 
 [node name="Panel" type="Panel" parent="." unique_id=1558494572]
@@ -28,3 +30,5 @@ text = "Weight ?"
 [node name="Money" type="Label" parent="Panel/VBoxContainer" unique_id=586987532]
 layout_mode = 2
 text = "Money: $0"
+
+[node name="EscapeTimer" parent="." unique_id=150979742 instance=ExtResource("2_perbb")]
