@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bp7pfs500k1fq"]
 
 [ext_resource type="Script" uid="uid://b18l85b06qtbf" path="res://loot/basic_loot.gd" id="1_e8brt"]
-[ext_resource type="Texture2D" uid="uid://67hmx35qvt6k" path="res://loot/assets/TEMP_jewelry_loot.png" id="2_e8brt"]
+[ext_resource type="Texture2D" uid="uid://c1o51m7id6vpp" path="res://loot/assets/jewelry_-_64x64.png" id="2_e8brt"]
 [ext_resource type="AudioStream" uid="uid://nvtfqvpskg68" path="res://loot/assets/TEMP_cash_pickup.wav" id="3_5egxr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fwtsj"]

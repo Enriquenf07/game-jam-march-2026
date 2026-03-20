@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://67hmx35qvt6k"
-path="res://.godot/imported/TEMP_jewelry_loot.png-0f427dc6daacde36938b8e4f6ffad3e1.ctex"
+uid="uid://c1o51m7id6vpp"
+path="res://.godot/imported/jewelry_-_64x64.png-ce8c23d93a079f689d880c80538a7dfe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://loot/assets/TEMP_jewelry_loot.png"
-dest_files=["res://.godot/imported/TEMP_jewelry_loot.png-0f427dc6daacde36938b8e4f6ffad3e1.ctex"]
+source_file="res://loot/assets/jewelry_-_64x64.png"
+dest_files=["res://.godot/imported/jewelry_-_64x64.png-ce8c23d93a079f689d880c80538a7dfe.ctex"]
 
 [params]
 
