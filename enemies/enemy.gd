@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 	state.update(delta)
 
 func change_state(new_state: String) -> void:
-	if state != null:  # ← necessário
+	if state != null: 
 		state.exit()
 	state = states[new_state]
 	state.set_entity(self)
