@@ -28,10 +28,10 @@ func _on_body_entered(body: Node2D) -> void:
 func _disarm_decorator():
 	pass
 
-func _on_trap_interacted(player: Player) -> void:
-	player.set_is_disarming(true)
-	player.trap_to_disarm = self
-	player.handle_trap_disarming()
+func _on_trap_interacted(interacting_player: Player) -> void:
+	interacting_player.set_is_disarming(true)
+	interacting_player.trap_to_disarm = self
+	interacting_player.handle_trap_disarming()
 
 func disarm() -> void:
 	_trap_trigger_collision.set_deferred("disabled", true)

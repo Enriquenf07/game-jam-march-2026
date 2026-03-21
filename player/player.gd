@@ -44,6 +44,9 @@ func _display_interaction_prompt(interactable: InteractableObject):
 	if (interactable.is_in_group("trap")):
 		_interaction_prompt.text = "E - Disarm"
 		_interaction_prompt.show()
+	elif (interactable.is_in_group("loot")):
+		_interaction_prompt.text = "E - Steal"
+		_interaction_prompt.show()
 
 func _direction_as_string(direction: MovingDirection) -> String:
 	match direction:

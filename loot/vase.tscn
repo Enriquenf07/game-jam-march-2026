@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://ieghsawdi2lh"]
+
+[ext_resource type="Script" uid="uid://moxv3s18tc1" path="res://loot/grabbable_loot.gd" id="1_eqs5c"]
+[ext_resource type="Texture2D" uid="uid://db8tin3v1cg11" path="res://loot/assets/vase_-_64x64.png" id="1_pwnx1"]
+[ext_resource type="Script" uid="uid://fpin7rm4san6" path="res://object/interactable_object.gd" id="2_3p3ga"]
+[ext_resource type="AudioStream" uid="uid://nvtfqvpskg68" path="res://loot/assets/TEMP_cash_pickup.wav" id="4_qs61x"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3p3ga"]
+radius = 28.0
+height = 78.0
+
+[sub_resource type="Animation" id="Animation_ckvu6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-20, -23)]
+}
+
+[sub_resource type="Animation" id="Animation_4bogx"]
+resource_name = "loot_value_float"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-20, -23), Vector2(-20, -71)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eqs5c"]
+_data = {
+&"RESET": SubResource("Animation_ckvu6"),
+&"loot_value_float": SubResource("Animation_4bogx")
+}
+
+[node name="Vase" type="Node2D" unique_id=2123596220 node_paths=PackedStringArray("_loot_visual", "_loot_collection_sound", "_loot_value_text", "_loot_value_animation", "_loot_interaction_collision")]
+script = ExtResource("1_eqs5c")
+_loot_value = 5000
+_loot_visual = NodePath("Sprite2D")
+_loot_collection_sound = NodePath("LootCollectionSoundPlayer")
+_loot_value_text = NodePath("LootValueText")
+_loot_value_animation = NodePath("LootValueText/LootValueAnimationPlayer")
+_loot_interaction_collision = NodePath("InteractableObject/CollisionShape2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1372785223]
+position = Vector2(1, -12)
+texture = ExtResource("1_pwnx1")
+
+[node name="InteractableObject" type="Area2D" parent="." unique_id=320169764 groups=["loot"]]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_3p3ga")
+metadata/_custom_type_script = "uid://fpin7rm4san6"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableObject" unique_id=63429501]
+position = Vector2(0, -10)
+shape = SubResource("CapsuleShape2D_3p3ga")
+
+[node name="LootCollectionSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=661070409]
+stream = ExtResource("4_qs61x")
+
+[node name="LootValueText" type="Label" parent="." unique_id=876546824]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(6.8345666e-06, 0.7738233, 1.540184e-06, 1)
+text = "$100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LootValueAnimationPlayer" type="AnimationPlayer" parent="LootValueText" unique_id=709368951]
+libraries/ = SubResource("AnimationLibrary_eqs5c")
+speed_scale = 2.5
+
+[connection signal="interacted" from="InteractableObject" to="." method="_on_interactable_object_interacted"]
+[connection signal="animation_finished" from="LootValueText/LootValueAnimationPlayer" to="." method="_on_loot_value_animation_player_animation_finished"]

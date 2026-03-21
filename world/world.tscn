@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dhqqk4mm3mkgx" path="res://ui/PauseUi/PauseUI.tscn" id="12_mad0u"]
 [ext_resource type="PackedScene" uid="uid://dsg4tspdufk0g" path="res://loot/cash.tscn" id="13_ocfjn"]
 [ext_resource type="PackedScene" uid="uid://bp7pfs500k1fq" path="res://loot/jewelry.tscn" id="14_dqqhb"]
+[ext_resource type="PackedScene" uid="uid://ieghsawdi2lh" path="res://loot/vase.tscn" id="15_b2suy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ai45w"]
 size = Vector2(720, 224)
@@ -81,3 +82,6 @@ position = Vector2(50, 129)
 
 [node name="Jewelry" parent="." unique_id=426449999 instance=ExtResource("14_dqqhb")]
 position = Vector2(44, 180)
+
+[node name="Vase" parent="." unique_id=2123596220 instance=ExtResource("15_b2suy")]
+position = Vector2(38, 55)
