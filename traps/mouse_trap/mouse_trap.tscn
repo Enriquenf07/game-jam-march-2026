@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://602avg8qg6xb"]
 
 [ext_resource type="Script" uid="uid://kd53v7wik11l" path="res://traps/mouse_trap/mouse_trap.gd" id="1_fvs2v"]
-[ext_resource type="Texture2D" uid="uid://brlk2u2nq1euu" path="res://traps/mouse_trap/assets/TEMP_mouse_trap_armed.png" id="2_fvs2v"]
 [ext_resource type="AudioStream" uid="uid://casq1nxffh6c8" path="res://traps/mouse_trap/assets/Snap_Mousetrap1.wav" id="2_j6bsh"]
 [ext_resource type="AudioStream" uid="uid://hv5yuq3o47gj" path="res://traps/mouse_trap/assets/Snap_Mousetrap2.wav" id="3_7eq31"]
 [ext_resource type="Script" uid="uid://fpin7rm4san6" path="res://object/interactable_object.gd" id="3_fvs2v"]
@@ -10,9 +9,10 @@
 [ext_resource type="AudioStream" uid="uid://dekx64lk8g1mi" path="res://traps/mouse_trap/assets/Male_LS_L_Scream02.wav" id="6_rulsv"]
 [ext_resource type="AudioStream" uid="uid://i66jcno35gut" path="res://traps/mouse_trap/assets/Male_Pain_Scream06.wav" id="7_4dtme"]
 [ext_resource type="AudioStream" uid="uid://cc2yo8dlil3f1" path="res://traps/mouse_trap/assets/Male_Pain_Scream08.wav" id="8_5fqlv"]
+[ext_resource type="Texture2D" uid="uid://b07hj3r80rlur" path="res://traps/mouse_trap/assets/mousetrap_-_64x64.png" id="9_sn2rt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6tma0"]
-size = Vector2(54, 54)
+size = Vector2(27, 18)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6tma0"]
 radius = 320.0
@@ -21,7 +21,7 @@ radius = 320.0
 radius = 384.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ig7x"]
-radius = 39.0
+radius = 25.0
 
 [node name="MouseTrap" type="Area2D" unique_id=877290527 node_paths=PackedStringArray("_player_hurt_sound", "_player_hurt_collision", "_trap_audio_collision", "_trap_visual", "_trap_trigger_collision", "_disarm_sound", "_trap_trigger_sound", "_trap_interaction_collision")]
 script = ExtResource("1_fvs2v")
@@ -39,7 +39,8 @@ _trap_interaction_collision = NodePath("InteractableArea/InteractionCollision")
 metadata/_custom_type_script = "uid://bbcrcehk7g6b"
 
 [node name="TrapVisual" type="Sprite2D" parent="." unique_id=848609801]
-texture = ExtResource("2_fvs2v")
+position = Vector2(0, -14)
+texture = ExtResource("9_sn2rt")
 
 [node name="TrapCollision" type="CollisionShape2D" parent="." unique_id=643581069]
 shape = SubResource("RectangleShape2D_6tma0")

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dc5kj63f84f4e" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="Texture2D" uid="uid://dto05yhxl8q30" path="res://player/assets/Thief_-_128x128_-_idle.png" id="2_g1dw6"]
+[ext_resource type="Texture2D" uid="uid://bt0fsq0qbmgdv" path="res://player/assets/Thief_-_128x128_-_slip_1.png" id="3_8t03j"]
 [ext_resource type="Texture2D" uid="uid://di5oetyn480gl" path="res://player/assets/Thief_-_128x128_-_run_1.png" id="3_hg6s5"]
 [ext_resource type="Texture2D" uid="uid://ddxwkulf6qgbm" path="res://ui/disarm/assets/TEMP_disarm_ui_under.png" id="3_qjkh3"]
 [ext_resource type="Texture2D" uid="uid://cxag831vvjv5o" path="res://player/assets/Thief_-_128x128_-_sneak.png" id="3_rgyib"]
@@ -14,7 +15,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_g1dw6")
+"texture": ExtResource("3_8t03j")
 }],
 "loop": true,
 "name": &"banana_slip",
@@ -38,7 +39,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_g1dw6")
+"texture": ExtResource("3_8t03j")
 }],
 "loop": false,
 "name": &"marble_trip",
@@ -54,7 +55,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_g1dw6")
+"texture": ExtResource("3_8t03j")
 }],
 "loop": false,
 "name": &"puddle_slip",
@@ -137,7 +138,7 @@ _interaction_prompt = NodePath("InteractionPrompt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1604162737]
 sprite_frames = SubResource("SpriteFrames_rkbax")
-animation = &"disarming"
+animation = &"banana_slip"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=494601615]
