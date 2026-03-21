@@ -1,7 +1,7 @@
 class_name MouseTrap
 extends NoisyTrap
 
-var _disarmed_texture = preload("res://traps/mouse_trap/assets/TEMP_mouse_trap_disarmed.png")
+var _disarmed_texture = preload("res://traps/mouse_trap/assets/mousetrap_disarmed_-_64x64.png")
 @export var _trap_trigger_sounds: Array[AudioStream]
 @export var _player_hurt_sound: AudioStreamPlayer2D
 @export var _player_hurt_sounds: Array[AudioStream]
