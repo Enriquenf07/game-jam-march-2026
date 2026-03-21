@@ -24,9 +24,6 @@ func _on_interactable_object_interacted(player: Player) -> void:
 			player.inventory.remove_item(key)
 		else:
 			return
-	player.set_is_still(true)
-	await get_tree().create_timer(time_to_open).timeout
-	player.set_is_still(false)
 	var item = packed_item.instantiate() as Item
 	item.data = item_data
 	item.global_position = global_position

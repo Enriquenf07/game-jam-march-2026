@@ -69,6 +69,14 @@ func _physics_process(delta: float) -> void:
 	if (_is_disarming): return
 	if (_is_slipping):
 		velocity = set_sliding_direction(_current_direction)
+		move_and_slide()
+		for i in get_slide_collision_count():
+			var collision = get_slide_collision(i)
+			if collision.get_collider() != null:
+				_is_slipping = false
+				velocity = Vector2.ZERO
+				break
+		velocity = set_sliding_direction(_current_direction)
 	elif (direction != Vector2.ZERO):
 		ray_cast.target_position = _set_ray_direction(direction)
 		velocity = direction * get_speed()

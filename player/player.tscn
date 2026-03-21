@@ -82,7 +82,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqu6x"]
-size = Vector2(36, 12)
+size = Vector2(50, 53)
 
 [sub_resource type="Gradient" id="Gradient_rkbax"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -142,7 +142,7 @@ animation = &"banana_slip"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=494601615]
-position = Vector2(4, 54)
+position = Vector2(-3, 33.5)
 shape = SubResource("RectangleShape2D_kqu6x")
 
 [node name="body" type="Node2D" parent="." unique_id=482923969]
