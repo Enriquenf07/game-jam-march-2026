@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dc5kj63f84f4e" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="Texture2D" uid="uid://dto05yhxl8q30" path="res://player/assets/Thief_-_128x128_-_idle.png" id="2_g1dw6"]
 [ext_resource type="Texture2D" uid="uid://bt0fsq0qbmgdv" path="res://player/assets/Thief_-_128x128_-_slip_1.png" id="3_8t03j"]
+[ext_resource type="Texture2D" uid="uid://dakxgquskw8q8" path="res://player/assets/Thief_-_128x128_-_interact_1.png" id="3_ebec5"]
 [ext_resource type="Texture2D" uid="uid://di5oetyn480gl" path="res://player/assets/Thief_-_128x128_-_run_1.png" id="3_hg6s5"]
 [ext_resource type="Texture2D" uid="uid://ddxwkulf6qgbm" path="res://ui/disarm/assets/TEMP_disarm_ui_under.png" id="3_qjkh3"]
 [ext_resource type="Texture2D" uid="uid://cxag831vvjv5o" path="res://player/assets/Thief_-_128x128_-_sneak.png" id="3_rgyib"]
@@ -10,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c8h3h2tu7uw8q" path="res://ui/disarm/assets/TEMP_disarm_ui_over.png" id="4_g6k8r"]
 [ext_resource type="Texture2D" uid="uid://cciv7m804ei3x" path="res://player/assets/Thief_-_128x128_-_sneak_2.png" id="4_hg6s5"]
 [ext_resource type="Texture2D" uid="uid://c8n6eyeujxnb2" path="res://ui/disarm/assets/TEMP_disarm_ui_progress.png" id="5_boad6"]
+[ext_resource type="Texture2D" uid="uid://c60tvxkswajhf" path="res://player/assets/Thief_-_128x128_-_fallen_1.png" id="5_yllr7"]
 [ext_resource type="Script" uid="uid://bfhdxp8oftejx" path="res://ui/disarm/disarm_ui.gd" id="6_g6k8r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rkbax"]
@@ -24,7 +26,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_g1dw6")
+"texture": ExtResource("3_ebec5")
 }],
 "loop": true,
 "name": &"disarming",
@@ -41,10 +43,13 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_8t03j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yllr7")
 }],
 "loop": false,
 "name": &"marble_trip",
-"speed": 1.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -56,11 +61,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("3_ebec5")
+}],
+"loop": false,
+"name": &"pickup",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("3_8t03j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yllr7")
 }],
 "loop": false,
 "name": &"puddle_slip",
-"speed": 1.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -139,7 +155,7 @@ _interaction_prompt = NodePath("InteractionPrompt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1604162737]
 sprite_frames = SubResource("SpriteFrames_rkbax")
-animation = &"mouse_trap_hurt"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=494601615]

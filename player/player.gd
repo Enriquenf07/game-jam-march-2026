@@ -149,8 +149,10 @@ func _unhandled_input(event: InputEvent) -> void:
 	if(event.is_action_pressed('interact') and ray_cast.is_colliding()):
 		var collider := ray_cast.get_collider()
 		if(collider is InteractableObject):
-			print("interacted")
 			collider.on_interaction(self)
+			if (collider.is_in_group("loot")):
+				_player_visual.play("pickup")
+				_is_stunned = true
 
 func set_is_disarming(flag: bool) -> void:
 	_is_disarming = flag
@@ -172,27 +174,20 @@ func _on_disarming_animatior_animation_finished(anim_name: StringName) -> void:
 
 func handle_trap_activation(trap: TrapBase.TrapType) -> void:
 	match trap:
-		TrapBase.TrapType.FLOORBOARD:
-			print("squeak")
 		TrapBase.TrapType.BANANA:
 			_is_slipping = true
 			is_running = false
 			_player_visual.play("banana_slip")
-			print("slipped on banana")
 		TrapBase.TrapType.MARBLES:
 			_is_stunned = true
 			_is_slipping = false
 			_player_visual.play("marble_trip")
 			velocity = Vector2.ZERO
-			print("slipped on marbles")
 		TrapBase.TrapType.MOUSE_TRAP:
 			_is_stunned = true
 			_is_slipping = false
 			_player_visual.play("mouse_trap_hurt")
 			velocity = Vector2.ZERO
-			print("yeowch!!!")
-		TrapBase.TrapType.PUDDLE:
-			print("slipped on puddle")
 
 func slip_on_puddle():
 	_is_stunned = true
@@ -208,7 +203,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		is_running = true
 
 func _is_in_stunned_animation(player_animation: StringName) -> bool:
-	return (player_animation == "marble_trip" or player_animation == "mouse_trap_hurt" or player_animation == "puddle_slip")
+	return (player_animation == "marble_trip" or player_animation == "mouse_trap_hurt" or player_animation == "puddle_slip" or player_animation == "pickup")
 
 func stop_player():
 	_is_stunned = true

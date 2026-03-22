@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dfe2c4x55tpe6"
+path="res://.godot/imported/FOLEYFeet_Puddle_Shoes_Fast 03.wav-d2a26166ae489bd58613a30cb1d5e8b7.sample"
+
+[deps]
+
+source_file="res://traps/puddle/assets/FOLEYFeet_Puddle_Shoes_Fast 03.wav"
+dest_files=["res://.godot/imported/FOLEYFeet_Puddle_Shoes_Fast 03.wav-d2a26166ae489bd58613a30cb1d5e8b7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

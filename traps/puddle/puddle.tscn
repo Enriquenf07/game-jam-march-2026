@@ -1,11 +1,16 @@
 [gd_scene format=3 uid="uid://hjrqcu6wi22w"]
 
 [ext_resource type="Script" uid="uid://d2dyfh18ssu08" path="res://traps/puddle/puddle.gd" id="1_gv67p"]
+[ext_resource type="AudioStream" uid="uid://bqns1248qwdtj" path="res://traps/puddle/assets/FOLEYFeet_Puddle_Shoes_Fast 01.wav" id="2_1o25k"]
 [ext_resource type="Texture2D" uid="uid://27ysarj3mmf1" path="res://traps/puddle/assets/puddle_-_64x64.png" id="2_4lmy7"]
+[ext_resource type="AudioStream" uid="uid://bb8swp7vo7aj1" path="res://traps/puddle/assets/FOLEYFeet_Puddle_Shoes_Fast 02.wav" id="3_axm8l"]
 [ext_resource type="AudioStream" uid="uid://bxgiedomh7gcb" path="res://traps/puddle/assets/TEMP_puddle_disarm.wav" id="3_x4rcs"]
-[ext_resource type="AudioStream" uid="uid://cew7krf8jy5ix" path="res://traps/puddle/assets/TEMP_puddle_splash.wav" id="4_4lmy7"]
+[ext_resource type="AudioStream" uid="uid://dfe2c4x55tpe6" path="res://traps/puddle/assets/FOLEYFeet_Puddle_Shoes_Fast 03.wav" id="4_o0rt5"]
 [ext_resource type="Script" uid="uid://fpin7rm4san6" path="res://object/interactable_object.gd" id="4_s52k6"]
-[ext_resource type="AudioStream" uid="uid://0eu4afeebqr0" path="res://traps/puddle/assets/TEMP_puddle_slip.wav" id="5_rdwt2"]
+[ext_resource type="AudioStream" uid="uid://sit7wwxgtlw2" path="res://traps/puddle/assets/FOLEYFeet_Puddle_Shoes_Fast 04.wav" id="5_golnx"]
+[ext_resource type="AudioStream" uid="uid://btgc01qerptvl" path="res://traps/puddle/assets/FOLEYFeet_Puddle_Shoes_Fast 05.wav" id="6_qyy8n"]
+[ext_resource type="AudioStream" uid="uid://cwk7b5fdeyq5b" path="res://traps/puddle/assets/FOLEYFeet_Puddle_Shoes_Fast 06.wav" id="7_larv5"]
+[ext_resource type="AudioStream" uid="uid://cnnxj47u4kfva" path="res://traps/puddle/assets/Fall on Puddle.wav" id="10_pdvg4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rdwt2"]
 radius = 7.0
@@ -22,6 +27,7 @@ radius = 40.0
 
 [node name="Puddle" type="Area2D" unique_id=1615284829 node_paths=PackedStringArray("_slipping_sound_player", "_slipping_sound_collision", "_trap_audio_collision", "_trap_visual", "_trap_trigger_collision", "_disarm_sound", "_trap_trigger_sound", "_trap_interaction_collision")]
 script = ExtResource("1_gv67p")
+_puddle_step_sounds = Array[AudioStream]([ExtResource("2_1o25k"), ExtResource("3_axm8l"), ExtResource("4_o0rt5"), ExtResource("5_golnx"), ExtResource("6_qyy8n"), ExtResource("7_larv5")])
 _slipping_sound_player = NodePath("SoundArea/SlippingSoundPlayer")
 _slipping_sound_collision = NodePath("SoundArea/SlippingSoundAreaCollision")
 _trap_audio_collision = NodePath("SoundArea/WalkingSoundAreaCollision")
@@ -44,7 +50,7 @@ shape = SubResource("CapsuleShape2D_rdwt2")
 stream = ExtResource("3_x4rcs")
 
 [node name="TrapActivationSoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1216367516]
-stream = ExtResource("4_4lmy7")
+stream = ExtResource("2_1o25k")
 
 [node name="SoundArea" type="Area2D" parent="." unique_id=1540488914]
 
@@ -59,7 +65,7 @@ disabled = true
 debug_color = Color(0.9764706, 0.101960786, 0.29411766, 0.41960785)
 
 [node name="SlippingSoundPlayer" type="AudioStreamPlayer2D" parent="SoundArea" unique_id=24640079]
-stream = ExtResource("5_rdwt2")
+stream = ExtResource("10_pdvg4")
 
 [node name="InteractableArea" type="Area2D" parent="." unique_id=1739025049 groups=["trap"]]
 unique_name_in_owner = true
