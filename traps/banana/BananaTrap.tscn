@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://fpin7rm4san6" path="res://object/interactable_object.gd" id="2_6vc60"]
 [ext_resource type="Texture2D" uid="uid://cbxcxbi3xdux7" path="res://traps/banana/assets/banana_peel_-_64x64.png" id="2_u5qeu"]
 [ext_resource type="AudioStream" uid="uid://q4jgkx2ybo0p" path="res://traps/banana/assets/TEMP_banana_disarm.wav" id="3_u5qeu"]
-[ext_resource type="AudioStream" uid="uid://dkwtaifihobq7" path="res://traps/banana/assets/TEMP_banana_slip.wav" id="3_xfo5d"]
+[ext_resource type="AudioStream" uid="uid://dya1hnajwqh2m" path="res://traps/banana/assets/Slip.wav" id="4_u5qeu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lgx3o"]
 radius = 21.0
@@ -33,7 +33,7 @@ shape = SubResource("CircleShape2D_lgx3o")
 stream = ExtResource("3_u5qeu")
 
 [node name="TrapActivationSoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1533999276]
-stream = ExtResource("3_xfo5d")
+stream = ExtResource("4_u5qeu")
 
 [node name="InteractableArea" type="Area2D" parent="." unique_id=1445917597 groups=["trap"]]
 unique_name_in_owner = true
