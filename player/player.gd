@@ -208,3 +208,4 @@ func _is_in_stunned_animation(player_animation: StringName) -> bool:
 func stop_player():
 	_is_stunned = true
 	_player_visual.play("idle")
+	_disarm_progress_bar.stop_disarming()
