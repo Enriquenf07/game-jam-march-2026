@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 LootEventBus="*uid://bbg7erk3fo37v"
+GameEndEventBus="*uid://b6hbn4np3jkvd"
 
 [importer_defaults]
 

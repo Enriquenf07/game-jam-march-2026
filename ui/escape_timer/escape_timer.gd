@@ -16,6 +16,10 @@ func start_timer():
 	show()
 	_escape_clock.start()
 
+func stop_timer():
+	hide()
+	_escape_clock.stop()
+
 func _on_escape_clock_timeout() -> void:
 	if (_seconds_left == 0):
 		if (_minutes_left == 0):

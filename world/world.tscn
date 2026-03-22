@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://dlwantqj076u7" path="res://itens/Item.tscn" id="4_item"]
 [ext_resource type="Resource" uid="uid://p1b61fm36elg" path="res://itens/data/case.tres" id="5_itemdata"]
 [ext_resource type="PackedScene" uid="uid://bxvbikmdrtff8" path="res://world/hud/hud.tscn" id="6_hud"]
-[ext_resource type="TileSet" uid="uid://b2rpemrsjwxkn" path="res://room/map_tile_set.tres" id="7_tileset"]
 [ext_resource type="PackedScene" uid="uid://bfeqvwpqr1iw3" path="res://room/Room.tscn" id="8_room"]
 [ext_resource type="PackedScene" uid="uid://cbhd62ic6mqpb" path="res://traps/marbles/marbles.tscn" id="9_marbles"]
 [ext_resource type="PackedScene" uid="uid://602avg8qg6xb" path="res://traps/mouse_trap/mouse_trap.tscn" id="10_mouse"]
@@ -15,16 +14,19 @@
 [ext_resource type="PackedScene" uid="uid://dsg4tspdufk0g" path="res://loot/cash.tscn" id="13_ocfjn"]
 [ext_resource type="PackedScene" uid="uid://bp7pfs500k1fq" path="res://loot/jewelry.tscn" id="14_dqqhb"]
 [ext_resource type="PackedScene" uid="uid://ieghsawdi2lh" path="res://loot/vase.tscn" id="15_b2suy"]
+[ext_resource type="PackedScene" uid="uid://cwd0jx26s4xsr" path="res://world/results_screen/results_screen.tscn" id="15_h8lre"]
+[ext_resource type="PackedScene" uid="uid://b6mjyjnwryed4" path="res://room/escape_door.tscn" id="16_h8lre"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ai45w"]
 size = Vector2(720, 224)
 
-[node name="Node2D" type="Node2D" unique_id=148939300 node_paths=PackedStringArray("hud", "camera", "canvaModulate", "pause_ui")]
+[node name="Node2D" type="Node2D" unique_id=148939300 node_paths=PackedStringArray("hud", "camera", "canvaModulate", "pause_ui", "results_ui")]
 script = ExtResource("1_4717r")
 hud = NodePath("Hud")
 camera = NodePath("Camera")
 canvaModulate = NodePath("CanvasModulate")
 pause_ui = NodePath("PauseUi")
+results_ui = NodePath("ResultsScreen")
 metadata/_custom_type_script = "uid://yyqd8rad7pha"
 
 [node name="Camera" type="Camera2D" parent="." unique_id=1564084660]
@@ -50,10 +52,8 @@ data = ExtResource("5_itemdata")
 
 [node name="Hud" parent="." unique_id=1405528010 instance=ExtResource("6_hud")]
 
-[node name="Room" parent="." unique_id=1779495073 node_paths=PackedStringArray("room_area") instance=ExtResource("8_room")]
+[node name="Room" parent="." unique_id=1779495073 instance=ExtResource("8_room")]
 position = Vector2(-5, -1)
-tile_set = ExtResource("7_tileset")
-room_area = NodePath("Area2D")
 
 [node name="Area2D" type="Area2D" parent="Room" unique_id=1221307362]
 
@@ -61,10 +61,8 @@ room_area = NodePath("Area2D")
 position = Vector2(215, -48)
 shape = SubResource("RectangleShape2D_ai45w")
 
-[node name="Room2" parent="." unique_id=1398693397 node_paths=PackedStringArray("room_area") instance=ExtResource("8_room")]
+[node name="Room2" parent="." unique_id=1398693397 instance=ExtResource("8_room")]
 position = Vector2(-5, -225)
-tile_set = ExtResource("7_tileset")
-room_area = NodePath("Area2D")
 
 [node name="Area2D" type="Area2D" parent="Room2" unique_id=1963894054]
 
@@ -85,3 +83,8 @@ position = Vector2(44, 180)
 
 [node name="Vase" parent="." unique_id=2123596220 instance=ExtResource("15_b2suy")]
 position = Vector2(38, 55)
+
+[node name="ResultsScreen" parent="." unique_id=819295893 instance=ExtResource("15_h8lre")]
+
+[node name="EscapeDoor" parent="." unique_id=1746694220 instance=ExtResource("16_h8lre")]
+position = Vector2(39, 261)
