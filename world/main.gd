@@ -15,6 +15,7 @@ func _ready() -> void:
 func _on_game_started():
 	_game = _game_scene.instantiate()
 	_game.results_ui.connect("game_exited", _on_game_exited)
+	_game.results_ui.connect("game_restarted", _on_game_restarted)
 	_starting_screen.disconnect("game_started", _on_game_started)
 	_starting_screen.queue_free()
 	add_child(_game)
@@ -23,5 +24,15 @@ func _on_game_exited():
 	_starting_screen = _title_screen.instantiate()
 	_starting_screen.connect("game_started", _on_game_started)
 	_game.results_ui.disconnect("game_exited", _on_game_exited)
+	_game.results_ui.disconnect("game_restarted", _on_game_restarted)
 	_game.queue_free()
 	add_child(_starting_screen)
+
+func _on_game_restarted():
+	_game.results_ui.disconnect("game_exited", _on_game_exited)
+	_game.results_ui.disconnect("game_restarted", _on_game_restarted)
+	_game.queue_free()
+	_game = _game_scene.instantiate()
+	_game.results_ui.connect("game_exited", _on_game_exited)
+	_game.results_ui.connect("game_restarted", _on_game_restarted)
+	add_child(_game)

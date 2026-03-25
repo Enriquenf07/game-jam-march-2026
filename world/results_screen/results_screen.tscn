@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://cmobixcwsm6uw" path="res://world/assets/win_screen_-_480x270.png" id="2_2g062"]
 [ext_resource type="Texture2D" uid="uid://b8emmv3j1evt2" path="res://world/assets/lose_screen_-_480x270.png" id="2_lnh2n"]
 
-[node name="ResultsScreen" type="CanvasLayer" unique_id=819295893 node_paths=PackedStringArray("_win_screen", "_win_button", "_score_text", "_lose_screen", "_lose_button")]
+[node name="ResultsScreen" type="CanvasLayer" unique_id=819295893 node_paths=PackedStringArray("_win_screen", "_replay_button", "_score_text", "_lose_screen", "_try_again_button")]
 script = ExtResource("1_ucyfj")
 _win_screen = NodePath("WinScreen")
-_win_button = NodePath("WinScreen/ExitButton")
+_replay_button = NodePath("WinScreen/PlayAgainButton")
 _score_text = NodePath("WinScreen/ScoreText")
 _lose_screen = NodePath("LoseScreen")
-_lose_button = NodePath("LoseScreen/ExitButton")
+_try_again_button = NodePath("LoseScreen/TryAgainButton")
 
 [node name="WinScreen" type="Control" parent="." unique_id=1361753961]
 visible = false
@@ -46,18 +46,31 @@ $0000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="PlayAgainButton" type="Button" parent="WinScreen" unique_id=463244745]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -128.0
+offset_right = 359.0
+offset_bottom = -32.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 64
+text = "Play Again"
+
 [node name="ExitButton" type="Button" parent="WinScreen" unique_id=389212487]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -292.5
+offset_left = -527.0
 offset_top = -128.0
-offset_right = 292.5
+offset_right = -32.0
 offset_bottom = -32.0
-grow_horizontal = 2
+grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 64
 text = "Return to Menu"
@@ -81,13 +94,35 @@ grow_vertical = 2
 texture = ExtResource("2_lnh2n")
 
 [node name="ExitButton" type="Button" parent="LoseScreen" unique_id=1453146947]
-layout_mode = 0
-offset_left = 329.0
-offset_top = 520.0
-offset_right = 824.0
-offset_bottom = 616.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -527.0
+offset_top = -128.0
+offset_right = -32.0
+offset_bottom = -32.0
+grow_horizontal = 0
+grow_vertical = 0
 theme_override_font_sizes/font_size = 64
 text = "Return to Menu"
 
+[node name="TryAgainButton" type="Button" parent="LoseScreen" unique_id=684061030]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -128.0
+offset_right = 328.0
+offset_bottom = -32.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 64
+text = "Try Again"
+
+[connection signal="pressed" from="WinScreen/PlayAgainButton" to="." method="_on_play_again_button_pressed"]
 [connection signal="pressed" from="WinScreen/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="LoseScreen/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="LoseScreen/TryAgainButton" to="." method="_on_play_again_button_pressed"]
