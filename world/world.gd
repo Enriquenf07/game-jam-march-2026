@@ -5,30 +5,16 @@ class_name World
 @export var hud: Hud
 @export var camera: Camera2D
 @export var canvaModulate: CanvasModulate
-@export var pause_ui: PauseUI
 @export var results_ui: ResultsScreen
 var player: Player
-var inventory = Inventory.new()
 
 func _ready() -> void:
-	pause_ui.change_inventory(inventory)
 	if(canvaModulate == null):
 		assert(canvaModulate != null, 'The world doesn’t have a canvas modulate.')
 	canvaModulate.color = Color.BLACK
-	_refresh()
-	var factory := PlayerFactory.new()
-	player = factory.create(Vector2(0, 0), self, inventory)
-	inventory.inventory_changed.connect(_refresh)
 	hud.police_timer.start_timer()
 	hud.police_timer.connect("police_arrived", _on_player_caught)
 	GameEndEventBus.connect("player_escaped", _on_player_escaped)
-
-func _refresh() -> void:
-	pause_ui.refresh_inventory()
-	var weight := 0.0
-	for item in inventory.items:
-		weight += item.weight
-	hud.weight_label.text = "Weight: %.2f" % weight
 
 func _physics_process(delta: float) -> void:
 	if(player != null):

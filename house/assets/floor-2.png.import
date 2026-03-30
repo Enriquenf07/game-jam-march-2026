@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxcn3vu2qbcnk"
-path="res://.godot/imported/vecteezy_question-mark-pixel-style_14415930.jpg-54defeddd9cb1d747068b362506707d4.ctex"
+uid="uid://i6i6um7oppva"
+path="res://.godot/imported/floor-2.png-a12d5129f66fcfcd4fbd6ecff9c61bfc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/test_files/vecteezy_question-mark-pixel-style_14415930.jpg"
-dest_files=["res://.godot/imported/vecteezy_question-mark-pixel-style_14415930.jpg-54defeddd9cb1d747068b362506707d4.ctex"]
+source_file="res://house/assets/floor-2.png"
+dest_files=["res://.godot/imported/floor-2.png-a12d5129f66fcfcd4fbd6ecff9c61bfc.ctex"]
 
 [params]
 

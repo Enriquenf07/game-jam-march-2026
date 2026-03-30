@@ -1,7 +1,7 @@
 [gd_resource type="TileSet" format=3 uid="uid://b2rpemrsjwxkn"]
 
-[ext_resource type="Texture2D" uid="uid://brs44t2nhp5hr" path="res://assets/test_files/floor-1.png" id="1_un05l"]
-[ext_resource type="Texture2D" uid="uid://i6i6um7oppva" path="res://assets/test_files/floor-2.png" id="2_64jw1"]
+[ext_resource type="Texture2D" uid="uid://brs44t2nhp5hr" path="res://house/assets/floor-1.png" id="1_c42y1"]
+[ext_resource type="Texture2D" uid="uid://i6i6um7oppva" path="res://house/assets/floor-2.png" id="2_jxlbq"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_un05l"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -10,7 +10,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8
 agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_381ur"]
-texture = ExtResource("1_un05l")
+texture = ExtResource("1_c42y1")
 0:0/0 = 0
 0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_un05l")
 1:0/0 = 0
@@ -21,7 +21,7 @@ texture = ExtResource("1_un05l")
 1:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_un05l")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8gc8m"]
-texture = ExtResource("2_64jw1")
+texture = ExtResource("2_jxlbq")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
