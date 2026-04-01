@@ -16,7 +16,6 @@ var _current_direction: MovingDirection = MovingDirection.NONE
 @export var _debug_direction_label: Label
 @export var _player_visual: AnimatedSprite2D
 var is_running = false
-var inventory: Inventory
 @export var _disarm_progress_bar: DisarmUI
 var trap_to_disarm: TrapBase
 var _direction_when_disarming: MovingDirection = MovingDirection.NONE

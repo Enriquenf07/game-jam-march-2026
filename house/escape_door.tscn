@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dmmqv5v1ru6x1" path="res://house/escape_door.gd" id="1_a4tbf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ec3ix"]
-size = Vector2(192, 20)
+size = Vector2(384, 64)
 
 [node name="EscapeDoor" type="Area2D" unique_id=1746694220]
 collision_layer = 0

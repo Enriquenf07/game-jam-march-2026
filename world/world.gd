@@ -6,7 +6,7 @@ class_name World
 @export var camera: Camera2D
 @export var canvaModulate: CanvasModulate
 @export var results_ui: ResultsScreen
-var player: Player
+@export var player: Player
 
 func _ready() -> void:
 	if(canvaModulate == null):
@@ -17,9 +17,10 @@ func _ready() -> void:
 	GameEndEventBus.connect("player_escaped", _on_player_escaped)
 
 func _physics_process(delta: float) -> void:
-	if(player != null):
-		var target_pos = player.global_position
-		camera.global_position = camera.global_position.lerp(target_pos, lerp_speed * delta)
+	if(player == null):
+		return
+	var target_pos = player.global_position
+	camera.global_position = camera.global_position.lerp(target_pos, lerp_speed * delta)
 
 func _on_player_caught():
 	hud.police_timer.stop_timer()
