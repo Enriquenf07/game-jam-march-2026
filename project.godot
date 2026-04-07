@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 LootEventBus="*uid://bbg7erk3fo37v"
 GameEndEventBus="*uid://b6hbn4np3jkvd"
 
+[dotnet]
+
+project/assembly_name="game-jam-heist"
+
 [importer_defaults]
 
 texture={
