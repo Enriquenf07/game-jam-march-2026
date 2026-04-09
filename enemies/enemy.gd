@@ -28,7 +28,7 @@ func _ready() -> void:
 	assert (vision != null, "vision should be assigned in the editor")
 	assert (nav != null, "Navigation should be assigned in the editor")
 	assert (areaOfDanger != null, "areaOfDanger should be assigned in the editor")
-	assert (patrol_points.is_empty(), "Assign patrol points")
+	#assert (patrol_points.is_empty(), "Assign patrol points")
 	change_state("patrol")
 	for point in patrol_points:
 		patrol_positions.append(point.global_position) 

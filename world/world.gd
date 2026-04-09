@@ -12,7 +12,7 @@ func _ready() -> void:
 	if(canvaModulate == null):
 		assert(canvaModulate != null, 'The world doesn’t have a canvas modulate.')
 	canvaModulate.color = Color.BLACK
-	hud.police_timer.start_timer()
+	#hud.police_timer.start_timer()
 	hud.police_timer.connect("police_arrived", _on_player_caught)
 	GameEndEventBus.connect("player_escaped", _on_player_escaped)
 
