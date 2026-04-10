@@ -33,6 +33,8 @@ texture = ExtResource("2_si4lf")
 [node name="AreaOfSound" type="Area2D" parent="." unique_id=804260375]
 unique_name_in_owner = true
 scale = Vector2(1.2000005, 1.2000005)
+collision_layer = 0
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaOfSound" unique_id=892290623]
 shape = SubResource("CircleShape2D_ojddb")
@@ -40,6 +42,7 @@ shape = SubResource("CircleShape2D_ojddb")
 [node name="AreaOfDanger" type="Area2D" parent="." unique_id=725231482]
 unique_name_in_owner = true
 scale = Vector2(0.80000114, 0.80000114)
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaOfDanger" unique_id=617255490]
 shape = SubResource("CircleShape2D_si4lf")
@@ -48,6 +51,7 @@ debug_color = Color(0.9911917, 0.09179903, 0, 0.41960785)
 [node name="AreaOfChasing" type="Area2D" parent="." unique_id=622029900]
 unique_name_in_owner = true
 scale = Vector2(1.9200003, 1.9200003)
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaOfChasing" unique_id=286447003]
 shape = SubResource("CircleShape2D_ookjo")

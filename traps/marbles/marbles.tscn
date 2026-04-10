@@ -41,6 +41,8 @@ stream = ExtResource("3_cfp6s")
 stream = ExtResource("4_cfp6s")
 
 [node name="SoundArea" type="Area2D" parent="." unique_id=421094428]
+collision_layer = 4
+collision_mask = 0
 
 [node name="SoundAreaCollision" type="CollisionShape2D" parent="SoundArea" unique_id=732005292]
 shape = SubResource("CircleShape2D_djhvq")

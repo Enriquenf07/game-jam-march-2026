@@ -41,6 +41,8 @@ stream = ExtResource("4_eglyy")
 max_distance = 320.0
 
 [node name="SoundArea" type="Area2D" parent="." unique_id=2062724446]
+collision_layer = 4
+collision_mask = 0
 
 [node name="SoundAreaCollision" type="CollisionShape2D" parent="SoundArea" unique_id=312554078]
 shape = SubResource("CircleShape2D_x4wjo")
