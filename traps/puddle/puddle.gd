@@ -28,7 +28,7 @@ func _on_trap_activation_sound_finished() -> void:
 	_trap_trigger_sound.stream = _puddle_step_sounds[randi_range(0, _puddle_step_sounds.size() - 1)]
 
 func _on_trap_disarmed():
-	_trap_visual.hide()
+	trap_visual.hide()
 
 func _on_slipping_sound_player_finished() -> void:
 	_slipping_sound_collision.set_deferred("disabled", true)

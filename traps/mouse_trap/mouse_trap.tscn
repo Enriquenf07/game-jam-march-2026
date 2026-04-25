@@ -23,7 +23,7 @@ radius = 384.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ig7x"]
 radius = 25.0
 
-[node name="MouseTrap" type="Area2D" unique_id=877290527 node_paths=PackedStringArray("_player_hurt_sound", "_player_hurt_collision", "_trap_audio_collision", "_trap_visual", "_trap_trigger_collision", "_disarm_sound", "_trap_trigger_sound", "_trap_interaction_collision")]
+[node name="MouseTrap" type="Area2D" unique_id=877290527 node_paths=PackedStringArray("_player_hurt_sound", "_player_hurt_collision", "_trap_audio_collision", "trap_visual", "_trap_trigger_collision", "_disarm_sound", "_trap_trigger_sound", "_trap_interaction_collision")]
 script = ExtResource("1_fvs2v")
 _trap_trigger_sounds = Array[AudioStream]([ExtResource("2_j6bsh"), ExtResource("3_7eq31"), ExtResource("4_v48po")])
 _player_hurt_sound = NodePath("SoundArea/PlayerHurtSoundPlayer")
@@ -31,7 +31,7 @@ _player_hurt_sounds = Array[AudioStream]([ExtResource("5_cy811"), ExtResource("6
 _player_hurt_collision = NodePath("SoundArea/PlayerHurtSoundCollision")
 _trap_audio_collision = NodePath("SoundArea/SoundAreaCollision")
 _type_of_trap = 3
-_trap_visual = NodePath("TrapVisual")
+trap_visual = NodePath("TrapVisual")
 _trap_trigger_collision = NodePath("TrapCollision")
 _disarm_sound = NodePath("DisarmSoundPlayer")
 _trap_trigger_sound = NodePath("TrapActivationSoundPlayer")

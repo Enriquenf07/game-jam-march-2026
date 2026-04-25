@@ -12,7 +12,7 @@ func _disarm_decorator():
 	print("floorboard disarmed")
 
 func _on_trap_disarmed() -> void:
-	_trap_visual.texture = _disarmed_texture
+	trap_visual.texture = _disarmed_texture
 
 func _on_trap_activation_sound_finished() -> void:
 	_trap_trigger_sound.stream = _squeak_sounds[randi_range(0, _squeak_sounds.size() - 1)]

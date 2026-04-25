@@ -15,11 +15,11 @@ radius = 320.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_xxqi1"]
 radius = 34.0
 
-[node name="Marbles" type="Area2D" unique_id=749801095 node_paths=PackedStringArray("_trap_audio_collision", "_trap_visual", "_trap_trigger_collision", "_disarm_sound", "_trap_trigger_sound", "_trap_interaction_collision")]
+[node name="Marbles" type="Area2D" unique_id=749801095 node_paths=PackedStringArray("_trap_audio_collision", "trap_visual", "_trap_trigger_collision", "_disarm_sound", "_trap_trigger_sound", "_trap_interaction_collision")]
 script = ExtResource("1_cfp6s")
 _trap_audio_collision = NodePath("SoundArea/SoundAreaCollision")
 _type_of_trap = 2
-_trap_visual = NodePath("TrapVisual")
+trap_visual = NodePath("TrapVisual")
 _trap_trigger_collision = NodePath("TrapCollision")
 _disarm_sound = NodePath("DisarmSoundPlayer")
 _trap_trigger_sound = NodePath("TrapActivationSoundPlayer")

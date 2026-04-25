@@ -17,11 +17,11 @@ radius = 320.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d61ba"]
 size = Vector2(76, 76)
 
-[node name="Floorboard" type="Area2D" unique_id=1354571515 node_paths=PackedStringArray("_trap_audio_collision", "_trap_visual", "_trap_trigger_collision", "_disarm_sound", "_trap_trigger_sound", "_trap_interaction_collision")]
+[node name="Floorboard" type="Area2D" unique_id=1354571515 node_paths=PackedStringArray("_trap_audio_collision", "trap_visual", "_trap_trigger_collision", "_disarm_sound", "_trap_trigger_sound", "_trap_interaction_collision")]
 script = ExtResource("1_ch6ii")
 _squeak_sounds = Array[AudioStream]([ExtResource("4_eglyy"), ExtResource("3_38lp7"), ExtResource("4_evfrp")])
 _trap_audio_collision = NodePath("SoundArea/SoundAreaCollision")
-_trap_visual = NodePath("TrapVisual")
+trap_visual = NodePath("TrapVisual")
 _trap_trigger_collision = NodePath("TrapCollision")
 _disarm_sound = NodePath("DisarmSoundPlayer")
 _trap_trigger_sound = NodePath("TrapActivationSoundPlayer")

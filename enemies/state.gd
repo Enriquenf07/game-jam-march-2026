@@ -3,6 +3,7 @@ class_name State
 
 var entity: Enemy
 
+@warning_ignore("shadowed_variable")
 func set_entity(entity: Enemy) -> void:
 	self.entity = entity
 
@@ -15,5 +16,5 @@ func enter() -> void:
 func exit() -> void:
 	pass
 
-func update(delta: float) -> void:  
+func update(_delta: float) -> void:  
 	pass

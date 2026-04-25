@@ -10,7 +10,6 @@ var waiting: bool = false
 
 
 func enter() -> void:
-	LootEventBus.emit_signal("danger_exited")
 	print("Entering Patrol State")
 	waiting = false
 	wait_timer = 0.0

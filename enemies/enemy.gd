@@ -8,12 +8,12 @@ class_name Enemy
 @onready var areaOfDanger: Area2D = %AreaOfDanger
 @onready var sprite: Sprite2D = %Sprite
 @onready var vision: RayCast2D = %Vision
-@export var ray_length: float = 50.0
+var ray_length: float
 @onready var nav: NavigationAgent2D = %NavigationAgent
 @export var patrol_points: Array[Marker2D] = []
 var state: State
 var patrol_positions: Array[Vector2] = []
-
+var sound_target: Vector2
 
 @onready var states = {
 	"patrol": Patrol.new(),
@@ -28,11 +28,10 @@ func _ready() -> void:
 	assert (vision != null, "vision should be assigned in the editor")
 	assert (nav != null, "Navigation should be assigned in the editor")
 	assert (areaOfDanger != null, "areaOfDanger should be assigned in the editor")
-	#assert (patrol_points.is_empty(), "Assign patrol points")
+	ray_length = vision.target_position.length()
 	change_state("patrol")
 	for point in patrol_points:
 		patrol_positions.append(point.global_position) 
-
 
 func _physics_process(delta: float) -> void:
 	state.update(delta)

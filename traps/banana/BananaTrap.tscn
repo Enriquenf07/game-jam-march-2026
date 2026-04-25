@@ -12,10 +12,10 @@ radius = 21.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_6vc60"]
 radius = 33.0
 
-[node name="BananaTrap" type="Area2D" unique_id=1649020604 node_paths=PackedStringArray("_trap_visual", "_trap_trigger_collision", "_disarm_sound", "_trap_trigger_sound", "_trap_interaction_collision")]
+[node name="BananaTrap" type="Area2D" unique_id=1649020604 node_paths=PackedStringArray("trap_visual", "_trap_trigger_collision", "_disarm_sound", "_trap_trigger_sound", "_trap_interaction_collision")]
 script = ExtResource("1_71s8c")
 _type_of_trap = 1
-_trap_visual = NodePath("Sprite2D")
+trap_visual = NodePath("Sprite2D")
 _trap_trigger_collision = NodePath("TrapCollision")
 _disarm_sound = NodePath("DisarmSoundPlayer")
 _trap_trigger_sound = NodePath("TrapActivationSoundPlayer")

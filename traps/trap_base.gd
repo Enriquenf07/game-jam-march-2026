@@ -6,7 +6,7 @@ signal trap_disarmed()
 enum TrapType {FLOORBOARD, BANANA, MARBLES, MOUSE_TRAP, PUDDLE}
 
 @export var _type_of_trap: TrapType
-@export var _trap_visual: Sprite2D
+@export var trap_visual: Sprite2D
 @export var _trap_trigger_collision: CollisionShape2D
 @export var _disarm_sound: AudioStreamPlayer
 @export var _trap_trigger_sound: AudioStreamPlayer2D

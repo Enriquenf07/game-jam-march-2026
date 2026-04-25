@@ -8,7 +8,7 @@ func _disarm_decorator():
 	print('banana disarmed')
 
 func _on_trap_disarmed() -> void:
-	_trap_visual.hide()
+	trap_visual.hide()
 
 func _on_disarm_sound_player_finished() -> void:
 	queue_free()

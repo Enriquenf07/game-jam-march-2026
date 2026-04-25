@@ -1,4 +1,4 @@
-class_name  ContinuousNoiseTrap
+class_name ContinuousNoiseTrap
 extends TrapBase
 
 var _player_in_trap: Player

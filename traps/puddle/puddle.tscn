@@ -25,14 +25,14 @@ radius = 320.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_a56ey"]
 radius = 40.0
 
-[node name="Puddle" type="Area2D" unique_id=1615284829 node_paths=PackedStringArray("_slipping_sound_player", "_slipping_sound_collision", "_trap_audio_collision", "_trap_visual", "_trap_trigger_collision", "_disarm_sound", "_trap_trigger_sound", "_trap_interaction_collision")]
+[node name="Puddle" type="Area2D" unique_id=1615284829 node_paths=PackedStringArray("_slipping_sound_player", "_slipping_sound_collision", "_trap_audio_collision", "trap_visual", "_trap_trigger_collision", "_disarm_sound", "_trap_trigger_sound", "_trap_interaction_collision")]
 script = ExtResource("1_gv67p")
 _puddle_step_sounds = Array[AudioStream]([ExtResource("2_1o25k"), ExtResource("3_axm8l"), ExtResource("4_o0rt5"), ExtResource("5_golnx"), ExtResource("6_qyy8n"), ExtResource("7_larv5")])
 _slipping_sound_player = NodePath("SoundArea/SlippingSoundPlayer")
 _slipping_sound_collision = NodePath("SoundArea/SlippingSoundAreaCollision")
 _trap_audio_collision = NodePath("SoundArea/WalkingSoundAreaCollision")
 _type_of_trap = 4
-_trap_visual = NodePath("TrapVisual")
+trap_visual = NodePath("TrapVisual")
 _trap_trigger_collision = NodePath("TrapCollision")
 _disarm_sound = NodePath("DisarmSoundPlayer")
 _trap_trigger_sound = NodePath("TrapActivationSoundPlayer")

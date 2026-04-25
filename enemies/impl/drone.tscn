@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://dpbjrgvx6p7x3"]
+
+[ext_resource type="Script" uid="uid://dcxy75xwg2jbm" path="res://enemies/enemy.gd" id="1_ojddb"]
+[ext_resource type="Texture2D" uid="uid://bg36m1h3ufl3t" path="res://enemies/assets/Security_Drone_-_64x64_-_idle.png" id="2_863rm"]
+
+[sub_resource type="Animation" id="Animation_863rm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_lo06q"]
+resource_name = "floating"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -5.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pvq8b"]
+_data = {
+&"RESET": SubResource("Animation_863rm"),
+&"floating": SubResource("Animation_lo06q")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lo06q"]
+radius = 25.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ojddb"]
+radius = 615.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_si4lf"]
+radius = 75.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ookjo"]
+radius = 350.0
+
+[node name="Drone" type="CharacterBody2D" unique_id=14194291]
+collision_layer = 0
+motion_mode = 1
+script = ExtResource("1_ojddb")
+metadata/_custom_type_script = "uid://dcxy75xwg2jbm"
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1518866546]
+unique_name_in_owner = true
+texture = ExtResource("2_863rm")
+offset = Vector2(0, -9)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite" unique_id=1481672363]
+libraries/ = SubResource("AnimationLibrary_pvq8b")
+autoplay = &"floating"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1033514661]
+position = Vector2(0.5, -2)
+shape = SubResource("CircleShape2D_lo06q")
+
+[node name="AreaOfSound" type="Area2D" parent="." unique_id=804260375]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaOfSound" unique_id=892290623]
+visible = false
+shape = SubResource("CircleShape2D_ojddb")
+
+[node name="AreaOfDanger" type="Area2D" parent="." unique_id=725231482]
+unique_name_in_owner = true
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaOfDanger" unique_id=617255490]
+visible = false
+shape = SubResource("CircleShape2D_si4lf")
+debug_color = Color(0.9911917, 0.09179903, 0, 0.41960785)
+
+[node name="AreaOfChasing" type="Area2D" parent="." unique_id=622029900]
+unique_name_in_owner = true
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaOfChasing" unique_id=286447003]
+shape = SubResource("CircleShape2D_ookjo")
+debug_color = Color(0.8035369, 0.004913187, 0.99999994, 0.41960785)
+
+[node name="Vision" type="RayCast2D" parent="." unique_id=2111335653]
+unique_name_in_owner = true
+target_position = Vector2(0, 360)
+
+[node name="NavigationAgent" type="NavigationAgent2D" parent="." unique_id=1742626916]
+unique_name_in_owner = true

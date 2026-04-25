@@ -23,12 +23,12 @@ func _on_body_entered(body: Node2D) -> void:
 	_player_hurt_sound.play()
 	_player_hurt_collision.set_deferred("disabled", false)
 	_trap_interaction_collision.set_deferred("disabled", true)
-	_trap_visual.texture = _disarmed_texture
+	trap_visual.texture = _disarmed_texture
 
 func _on_trap_disarmed() -> void:
 	_trap_trigger_sound.play()
 	_trap_audio_collision.set_deferred("disabled", false)
-	_trap_visual.texture = _disarmed_texture
+	trap_visual.texture = _disarmed_texture
 
 func _on_player_hurt_sound_player_finished() -> void:
 	_trap_trigger_collision.set_deferred("disabled", true)
