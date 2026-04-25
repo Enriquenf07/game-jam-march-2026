@@ -77,7 +77,6 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaOfSound" unique_id=892290623]
-visible = false
 shape = SubResource("CircleShape2D_ojddb")
 
 [node name="AreaOfDanger" type="Area2D" parent="." unique_id=725231482]
@@ -94,6 +93,7 @@ unique_name_in_owner = true
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaOfChasing" unique_id=286447003]
+visible = false
 shape = SubResource("CircleShape2D_ookjo")
 debug_color = Color(0.8035369, 0.004913187, 0.99999994, 0.41960785)
 

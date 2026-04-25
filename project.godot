@@ -24,6 +24,10 @@ GameEndEventBus="*uid://b6hbn4np3jkvd"
 
 project/assembly_name="game-jam-heist"
 
+[global_group]
+
+sound=""
+
 [importer_defaults]
 
 texture={

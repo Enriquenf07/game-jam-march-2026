@@ -40,7 +40,7 @@ stream = ExtResource("3_eglyy")
 stream = ExtResource("4_eglyy")
 max_distance = 320.0
 
-[node name="SoundArea" type="Area2D" parent="." unique_id=2062724446]
+[node name="SoundArea" type="Area2D" parent="." unique_id=2062724446 groups=["sound"]]
 collision_layer = 4
 collision_mask = 0
 

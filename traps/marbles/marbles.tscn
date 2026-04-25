@@ -40,7 +40,7 @@ stream = ExtResource("3_cfp6s")
 [node name="TrapActivationSoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1175124490]
 stream = ExtResource("4_cfp6s")
 
-[node name="SoundArea" type="Area2D" parent="." unique_id=421094428]
+[node name="SoundArea" type="Area2D" parent="." unique_id=421094428 groups=["sound"]]
 collision_layer = 4
 collision_mask = 0
 

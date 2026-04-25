@@ -5,6 +5,7 @@ var lost_player_timer: float = 0.0
 @export var LOST_PLAYER_TIMEOUT: float = 2.0
 
 func enter() -> void:
+	lost_player_timer = 0.0
 	print("Entering Chase State")
 
 func exit() -> void:

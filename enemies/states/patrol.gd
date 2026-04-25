@@ -15,8 +15,8 @@ func enter() -> void:
 	wait_timer = 0.0
 	if entity.patrol_positions.is_empty():
 		return
-	print('nav', entity.nav)
-	print(entity.patrol_positions)
+	#print('nav', entity.nav)
+	#print(entity.patrol_positions)
 	entity.nav.target_position = entity.patrol_positions[current_point]
 
 
@@ -29,12 +29,11 @@ func update(delta: float) -> void:
 
 	if entity.vision.is_colliding():
 		if entity.vision.get_collider().is_in_group("player"):
-			print('ppp')
 			entity.change_state("chase")
 			return
 
-	var bodies = entity.areaOfSound.get_overlapping_bodies()
-	var sound_bodies = bodies.filter(func(b): return b.is_in_group("Sound"))
+	var bodies = entity.areaOfSound.get_overlapping_areas()
+	var sound_bodies = bodies.filter(func(b): return b.is_in_group("sound"))
 	if not sound_bodies.is_empty():
 		entity.sound_target = sound_bodies[0].global_position  
 		entity.change_state("investigate")
