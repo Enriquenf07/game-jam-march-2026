@@ -30,6 +30,7 @@ func _ready() -> void:
 	assert (areaOfDanger != null, "areaOfDanger should be assigned in the editor")
 	ray_length = vision.target_position.length()
 	GameEndEventBus.connect("player_caught", _on_player_caught)
+	GameEndEventBus.connect("player_escaped", _on_player_caught)
 	change_state("patrol")
 	for point in patrol_points:
 		patrol_positions.append(point.global_position) 

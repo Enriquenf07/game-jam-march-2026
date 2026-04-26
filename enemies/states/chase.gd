@@ -3,6 +3,7 @@ class_name Chase
 
 var lost_player_timer: float = 0.0
 @export var LOST_PLAYER_TIMEOUT: float = 2.0
+var _police_called: bool
 
 func enter() -> void:
 	lost_player_timer = 0.0
@@ -39,6 +40,9 @@ func _chase(delta: float) -> void:
 		entity.velocity = Vector2.ZERO
 		if lost_player_timer >= LOST_PLAYER_TIMEOUT:
 			entity.change_state("patrol")
+			if not _police_called:
+				DroneEventBus.police_called.emit()
+				_police_called = true
 
 func update(delta: float) -> void:
 	_check_is_closer()
