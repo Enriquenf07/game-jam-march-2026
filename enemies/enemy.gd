@@ -29,6 +29,7 @@ func _ready() -> void:
 	assert (nav != null, "Navigation should be assigned in the editor")
 	assert (areaOfDanger != null, "areaOfDanger should be assigned in the editor")
 	ray_length = vision.target_position.length()
+	GameEndEventBus.connect("player_caught", _on_player_caught)
 	change_state("patrol")
 	for point in patrol_points:
 		patrol_positions.append(point.global_position) 
@@ -42,3 +43,6 @@ func change_state(new_state: String) -> void:
 	state = states[new_state]
 	state.set_entity(self)
 	state.enter()
+
+func _on_player_caught() -> void:
+	queue_free()

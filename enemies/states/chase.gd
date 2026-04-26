@@ -17,7 +17,7 @@ func _check_is_closer():
 		return
 	var player_close = bodies_close.front()
 	if player_close:
-		print('close')
+		GameEndEventBus.player_caught.emit()
 
 func _chase(delta: float) -> void:
 	var bodies = entity.areaOfChasing.get_overlapping_bodies().filter(func(b): return b.is_in_group("player"))
