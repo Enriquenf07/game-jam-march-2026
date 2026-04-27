@@ -8,6 +8,7 @@ class_name Enemy
 @onready var areaOfDanger: Area2D = %AreaOfDanger
 @onready var sprite: Sprite2D = %Sprite
 @onready var vision: RayCast2D = %Vision
+@onready var vision_cone: ShapeCast2D = $VisionCone
 var ray_length: float
 @onready var nav: NavigationAgent2D = %NavigationAgent
 @export var patrol_points: Array[Marker2D] = []

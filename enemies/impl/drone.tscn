@@ -52,6 +52,9 @@ radius = 75.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_ookjo"]
 radius = 350.0
 
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_863rm"]
+points = PackedVector2Array(0, 0, -120, -360, 120, -360)
+
 [node name="Drone" type="CharacterBody2D" unique_id=14194291]
 collision_layer = 0
 motion_mode = 1
@@ -84,7 +87,6 @@ unique_name_in_owner = true
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaOfDanger" unique_id=617255490]
-visible = false
 shape = SubResource("CircleShape2D_si4lf")
 debug_color = Color(0.9911917, 0.09179903, 0, 0.41960785)
 
@@ -93,7 +95,6 @@ unique_name_in_owner = true
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaOfChasing" unique_id=286447003]
-visible = false
 shape = SubResource("CircleShape2D_ookjo")
 debug_color = Color(0.8035369, 0.004913187, 0.99999994, 0.41960785)
 
@@ -103,3 +104,12 @@ target_position = Vector2(0, 360)
 
 [node name="NavigationAgent" type="NavigationAgent2D" parent="." unique_id=1742626916]
 unique_name_in_owner = true
+
+[node name="VisionCone" type="ShapeCast2D" parent="." unique_id=693098448]
+rotation = 1.5707964
+shape = SubResource("ConvexPolygonShape2D_863rm")
+target_position = Vector2(0, 0)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=2012804541]
+offset_right = 40.0
+offset_bottom = 40.0
