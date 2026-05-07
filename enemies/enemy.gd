@@ -15,6 +15,10 @@ var ray_length: float
 var state: State
 var patrol_positions: Array[Vector2] = []
 var sound_target: Vector2
+@onready var patrol_sound: AudioStreamPlayer2D = %PatrolHover
+@onready var chase_sound: AudioStreamPlayer2D = %ChaseHover
+@onready var alert_sound: AudioStreamPlayer = %AlertPlayer
+@onready var caught_sound: AudioStreamPlayer = %CaughtPlayer
 
 @onready var states = {
 	"patrol": Patrol.new(),
@@ -30,8 +34,8 @@ func _ready() -> void:
 	assert (nav != null, "Navigation should be assigned in the editor")
 	assert (areaOfDanger != null, "areaOfDanger should be assigned in the editor")
 	ray_length = vision.target_position.length()
-	GameEndEventBus.connect("player_caught", _on_player_caught)
-	GameEndEventBus.connect("player_escaped", _on_player_caught)
+	GameEndEventBus.connect("player_escaped", _on_player_escaped)
+	alert_sound.finished.connect(states["chase"].play_chasing_sound)
 	change_state("patrol")
 	for point in patrol_points:
 		patrol_positions.append(point.global_position) 
@@ -46,5 +50,8 @@ func change_state(new_state: String) -> void:
 	state.set_entity(self)
 	state.enter()
 
-func _on_player_caught() -> void:
+func _on_player_escaped() -> void:
+	queue_free()
+
+func _on_caught_player_finished() -> void:
 	queue_free()

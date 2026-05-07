@@ -12,11 +12,13 @@ func enter() -> void:
 	print("Entering Patrol State")
 	waiting = false
 	wait_timer = 0.0
+	entity.patrol_sound.play()
 	if entity.patrol_positions.is_empty():
 		return
 	entity.nav.target_position = entity.patrol_positions[current_point]
 
 func exit() -> void:
+	entity.patrol_sound.stop()
 	print("Exiting Patrol State")
 
 func update(delta: float) -> void:

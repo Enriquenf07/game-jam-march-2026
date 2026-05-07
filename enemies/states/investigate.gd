@@ -12,8 +12,10 @@ func enter() -> void:
 	wait_timer = 0.0
 	arrived = false
 	entity.nav.target_position = entity.sound_target
+	entity.patrol_sound.play()
 
 func exit() -> void:
+	entity.patrol_sound.stop()
 	print("Exiting Investigate State")
 
 func update(delta: float) -> void:

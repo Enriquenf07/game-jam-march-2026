@@ -205,6 +205,4 @@ func _is_in_stunned_animation(player_animation: StringName) -> bool:
 	return (player_animation == "marble_trip" or player_animation == "mouse_trap_hurt" or player_animation == "puddle_slip" or player_animation == "pickup")
 
 func stop_player():
-	_is_stunned = true
-	_player_visual.play("idle")
-	_disarm_progress_bar.stop_disarming()
+	queue_free()

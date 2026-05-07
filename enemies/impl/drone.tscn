@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dcxy75xwg2jbm" path="res://enemies/enemy.gd" id="1_ojddb"]
 [ext_resource type="Texture2D" uid="uid://bg36m1h3ufl3t" path="res://enemies/assets/Security_Drone_-_64x64_-_idle.png" id="2_863rm"]
+[ext_resource type="AudioStream" uid="uid://cfhjjptww4s4s" path="res://enemies/assets/drone_hover.wav" id="3_lo06q"]
+[ext_resource type="AudioStream" uid="uid://b08qcxa1l2fcd" path="res://enemies/assets/drone_chase.wav" id="4_pvq8b"]
+[ext_resource type="AudioStream" uid="uid://birt6akiuhdy1" path="res://enemies/assets/drone_alert.wav" id="5_r8ag2"]
+[ext_resource type="AudioStream" uid="uid://cbcs864b0xju2" path="res://enemies/assets/drone_caught.wav" id="6_42q2e"]
 
 [sub_resource type="Animation" id="Animation_863rm"]
 length = 0.001
@@ -100,7 +104,7 @@ debug_color = Color(0.8035369, 0.004913187, 0.99999994, 0.41960785)
 
 [node name="Vision" type="RayCast2D" parent="." unique_id=2111335653]
 unique_name_in_owner = true
-target_position = Vector2(0, 360)
+target_position = Vector2(360, 0)
 
 [node name="NavigationAgent" type="NavigationAgent2D" parent="." unique_id=1742626916]
 unique_name_in_owner = true
@@ -113,3 +117,28 @@ target_position = Vector2(0, 0)
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=2012804541]
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="DroneSounds" type="Node2D" parent="." unique_id=174553375]
+
+[node name="PatrolHover" type="AudioStreamPlayer2D" parent="DroneSounds" unique_id=847907216]
+unique_name_in_owner = true
+stream = ExtResource("3_lo06q")
+volume_db = -10.0
+max_distance = 1200.0
+
+[node name="ChaseHover" type="AudioStreamPlayer2D" parent="DroneSounds" unique_id=96575013]
+unique_name_in_owner = true
+stream = ExtResource("4_pvq8b")
+volume_db = -20.0
+max_distance = 1200.0
+
+[node name="AlertPlayer" type="AudioStreamPlayer" parent="DroneSounds" unique_id=1802838983]
+unique_name_in_owner = true
+stream = ExtResource("5_r8ag2")
+volume_db = -5.0
+
+[node name="CaughtPlayer" type="AudioStreamPlayer" parent="DroneSounds" unique_id=1644211910]
+unique_name_in_owner = true
+stream = ExtResource("6_42q2e")
+
+[connection signal="finished" from="DroneSounds/CaughtPlayer" to="." method="_on_caught_player_finished"]

@@ -7,9 +7,11 @@ var _police_called: bool
 
 func enter() -> void:
 	lost_player_timer = 0.0
+	entity.alert_sound.play()
 	print("Entering Chase State")
 
 func exit() -> void:
+	entity.chase_sound.stop()
 	print("Exiting Chase State")
 
 func _check_is_closer():
@@ -18,6 +20,8 @@ func _check_is_closer():
 		return
 	var player_close = bodies_close.front()
 	if player_close:
+		entity.chase_sound.stop()
+		entity.caught_sound.play()
 		GameEndEventBus.player_caught.emit()
 
 func _chase(delta: float) -> void:
@@ -53,3 +57,6 @@ func _wait_at_last_seen_point(delta: float) -> void:
 		if not _police_called:
 			DroneEventBus.police_called.emit()
 			_police_called = true
+
+func play_chasing_sound() -> void:
+	entity.chase_sound.play()
